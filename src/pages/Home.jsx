@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import HeroSection from '@/components/landing/HeroSection';
 import ServicesSection from '@/components/landing/ServicesSection';
 import AttorneySection from '@/components/landing/AttorneySection';
+import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import AppointmentForm from '@/components/landing/AppointmentForm';
 import FooterSection from '@/components/landing/FooterSection';
 
@@ -17,6 +18,7 @@ export default function Home() {
       <HeroSection onScrollToForm={scrollToForm} />
       <ServicesSection />
       <AttorneySection />
+      <TestimonialsSection />
       <AppointmentForm formRef={formRef} />
       <FooterSection />
     </main>
