@@ -20,18 +20,29 @@ export default function HeroSection({ onScrollToForm }) {
 
       {/* Top Bar */}
       <div className="relative z-10 bg-slate-900/80 backdrop-blur-sm border-b border-slate-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
-            <div className="flex items-center gap-2 text-amber-400 font-medium">
-              <Shield className="w-4 h-4" />
-              <span>Abogados de Inmigración en Tijuana</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Brand Logo */}
+            <div className="flex items-center gap-4">
+              <img 
+                src="https://corpzuniga.com/wp-content/uploads/2023/04/cropped-Logo-Corporativo-Zuniga-1.png"
+                alt="Corporativo Zúñiga"
+                className="h-12 w-auto"
+              />
+              <div className="hidden sm:block h-8 w-px bg-slate-700" />
+              <div className="hidden sm:flex items-center gap-2 text-amber-400 font-medium text-sm">
+                <Shield className="w-4 h-4" />
+                <span>Abogados de Inmigración</span>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-4 text-slate-300">
+
+            {/* Contact Info */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-300">
               <a href="tel:+526643207699" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+52 664 320 7699</span>
+                <span className="font-medium">+52 664 320 7699</span>
               </a>
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 <span>Edificio Centura, Tijuana B.C.</span>
               </div>
