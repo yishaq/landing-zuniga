@@ -15,8 +15,8 @@ export default function HeroSection({ onScrollToForm }) {
         />
       </div>
 
-      {/* Golden Accent Line */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500" />
+      {/* Brand Accent Line */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-[#003E65]" />
 
       {/* Top Bar */}
       <div className="relative z-10 bg-slate-900/80 backdrop-blur-sm border-b border-slate-700/50">
@@ -30,15 +30,15 @@ export default function HeroSection({ onScrollToForm }) {
                 className="h-12 w-auto"
               />
               <div className="hidden sm:block h-8 w-px bg-slate-700" />
-              <div className="hidden sm:flex items-center gap-2 text-amber-400 font-medium text-sm">
+              <div className="hidden sm:flex items-center gap-2 text-[#003E65] font-medium text-sm">
                 <Shield className="w-4 h-4" />
                 <span>Abogados de Inmigración</span>
               </div>
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-300">
-              <a href="tel:+526643207699" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#9C9C9C]">
+              <a href="tel:+526643207699" className="flex items-center gap-2 hover:text-[#003E65] transition-colors">
                 <Phone className="w-4 h-4" />
                 <span className="font-medium">+52 664 320 7699</span>
               </a>
@@ -60,22 +60,22 @@ export default function HeroSection({ onScrollToForm }) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
-              <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-              <span className="text-amber-400 text-sm font-medium">Más de 1,000 casos de éxito</span>
+            <div className="inline-flex items-center gap-2 bg-[#003E65]/10 border border-[#003E65]/30 rounded-full px-4 py-2 mb-6">
+              <span className="w-2 h-2 bg-[#003E65] rounded-full animate-pulse" />
+              <span className="text-[#003E65] text-sm font-medium">Más de 1,000 casos de éxito</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Soluciones
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-300">
+              <span className="block text-[#003E65]">
                 Migratorias
               </span>
-              <span className="block text-3xl sm:text-4xl lg:text-5xl mt-2 text-slate-300 font-light">
+              <span className="block text-3xl sm:text-4xl lg:text-5xl mt-2 text-[#9C9C9C] font-light">
                 a su alcance
               </span>
             </h1>
 
-            <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+            <p className="text-lg text-[#9C9C9C] mb-8 max-w-xl leading-relaxed">
               Expertos en Green Card, Ajuste de Estatus y Defensa Criminal. 
               Agenda tu consulta con el <strong className="text-white">Lic. Marcelo Zúñiga</strong> y 
               da el primer paso hacia tu futuro en Estados Unidos.
@@ -84,7 +84,7 @@ export default function HeroSection({ onScrollToForm }) {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 onClick={onScrollToForm}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40"
+                className="bg-[#003E65] hover:bg-[#002845] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#003E65]/25 transition-all hover:shadow-[#003E65]/40"
               >
                 Agendar Consulta
               </Button>
@@ -103,16 +103,16 @@ export default function HeroSection({ onScrollToForm }) {
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-[#9C9C9C]">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-                  <span className="text-amber-400 font-bold text-xs">20+</span>
+                <div className="w-8 h-8 rounded-full bg-[#003E65] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">20+</span>
                 </div>
                 <span>Años de experiencia</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-                  <span className="text-amber-400 font-bold text-xs">US</span>
+                <div className="w-8 h-8 rounded-full bg-[#003E65] flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">US</span>
                 </div>
                 <span>México y EE.UU.</span>
               </div>
@@ -128,8 +128,8 @@ export default function HeroSection({ onScrollToForm }) {
           >
             <div className="relative">
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-4 -left-4 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl" />
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-[#003E65]/20 rounded-full blur-3xl" />
+              <div className="absolute -bottom-4 -left-4 w-48 h-48 bg-[#003E65]/10 rounded-full blur-2xl" />
               
               {/* Main Image Container - Patriotic Immigration Theme */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -158,12 +158,12 @@ export default function HeroSection({ onScrollToForm }) {
                 {/* Floating Experience Card */}
                 <div className="absolute top-6 right-6 bg-white rounded-2xl px-4 py-3 shadow-xl backdrop-blur-sm bg-white/95">
                   <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#003E65] rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-lg">20+</span>
                     </div>
                     <div>
-                      <p className="text-slate-900 font-bold text-sm">Años</p>
-                      <p className="text-slate-500 text-xs">Experiencia</p>
+                      <p className="text-[#000000] font-bold text-sm">Años</p>
+                      <p className="text-[#9C9C9C] text-xs">Experiencia</p>
                     </div>
                   </div>
                 </div>
@@ -178,7 +178,7 @@ export default function HeroSection({ onScrollToForm }) {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <button onClick={onScrollToForm} className="text-slate-500 hover:text-amber-400 transition-colors">
+          <button onClick={onScrollToForm} className="text-[#9C9C9C] hover:text-[#003E65] transition-colors">
             <ArrowDown className="w-6 h-6" />
           </button>
         </motion.div>

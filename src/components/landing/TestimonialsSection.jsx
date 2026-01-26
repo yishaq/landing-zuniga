@@ -22,8 +22,8 @@ const StarRating = ({ rating }) => {
           key={star}
           className={`w-5 h-5 ${
             star <= rating
-              ? 'fill-amber-400 text-amber-400'
-              : 'fill-slate-200 text-slate-200'
+              ? 'fill-[#003E65] text-[#003E65]'
+              : 'fill-[#9C9C9C]/30 text-[#9C9C9C]/30'
           }`}
         />
       ))}
@@ -42,37 +42,37 @@ const TestimonialCard = ({ testimonial, index }) => {
     >
       {/* Quote Icon */}
       <div className="absolute top-6 right-6 opacity-10">
-        <Quote className="w-16 h-16 text-amber-500" />
+        <Quote className="w-16 h-16 text-[#003E65]" />
       </div>
 
       {/* Content */}
       <div className="relative">
         <StarRating rating={testimonial.rating} />
         
-        <p className="text-slate-700 leading-relaxed mt-4 mb-6 text-lg">
+        <p className="text-[#000000] leading-relaxed mt-4 mb-6 text-lg">
           "{testimonial.testimonial_text}"
         </p>
 
-        <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+        <div className="flex items-center justify-between pt-6 border-t border-[#9C9C9C]/20">
           <div>
-            <h4 className="font-semibold text-slate-900">{testimonial.client_name}</h4>
+            <h4 className="font-semibold text-[#000000]">{testimonial.client_name}</h4>
             <div className="flex flex-wrap items-center gap-2 mt-1">
               {testimonial.service && (
-                <span className="text-sm text-amber-600 font-medium">
+                <span className="text-sm text-[#003E65] font-medium">
                   {serviceLabels[testimonial.service] || testimonial.service}
                 </span>
               )}
               {testimonial.location && (
                 <>
-                  <span className="text-slate-400">•</span>
-                  <span className="text-sm text-slate-500">{testimonial.location}</span>
+                  <span className="text-[#9C9C9C]">•</span>
+                  <span className="text-sm text-[#9C9C9C]">{testimonial.location}</span>
                 </>
               )}
             </div>
           </div>
           {testimonial.is_featured && (
             <div className="flex-shrink-0">
-              <Award className="w-5 h-5 text-amber-500" />
+              <Award className="w-5 h-5 text-[#003E65]" />
             </div>
           )}
         </div>
@@ -117,13 +117,13 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
+          <span className="inline-block text-[#003E65] font-semibold text-sm tracking-wider uppercase mb-4">
             Testimonios
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#000000] mb-4">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-[#9C9C9C] max-w-2xl mx-auto mb-6">
             Miles de familias han confiado en nosotros para resolver sus casos migratorios
           </p>
 
@@ -135,16 +135,16 @@ export default function TestimonialsSection() {
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
                       key={star}
-                      className="w-5 h-5 fill-amber-400 text-amber-400"
+                      className="w-5 h-5 fill-[#003E65] text-[#003E65]"
                     />
                   ))}
                 </div>
-                <span className="text-2xl font-bold text-slate-900">{averageRating}</span>
+                <span className="text-2xl font-bold text-[#000000]">{averageRating}</span>
               </div>
-              <div className="h-8 w-px bg-slate-200" />
+              <div className="h-8 w-px bg-[#9C9C9C]/30" />
               <div className="text-left">
-                <p className="text-2xl font-bold text-slate-900">{testimonials.length}+</p>
-                <p className="text-sm text-slate-600">Clientes satisfechos</p>
+                <p className="text-2xl font-bold text-[#000000]">{testimonials.length}+</p>
+                <p className="text-sm text-[#9C9C9C]">Clientes satisfechos</p>
               </div>
             </div>
           )}
@@ -196,7 +196,7 @@ export default function TestimonialsSection() {
             href="https://www.google.com/maps/place/Corporativo+Zu%C3%B1iga/@32.5136052,-117.0125967,17z/data=!4m8!3m7!1s0x80d9484764f04767:0xbe082fb14cf9386f!8m2!3d32.5136052!4d-117.0100218!9m1!1b1!16s%2Fg%2F11j5gb4ql_"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-600 transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-[#9C9C9C] hover:text-[#003E65] transition-colors font-medium"
           >
             <img 
               src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"

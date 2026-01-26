@@ -32,7 +32,7 @@ export default function AttorneySection() {
           >
             <div className="relative">
               {/* Background Decoration */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-200 to-amber-100 rounded-3xl transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#003E65]/30 to-[#003E65]/10 rounded-3xl transform rotate-3" />
               
               {/* Image Container */}
               <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
@@ -44,10 +44,10 @@ export default function AttorneySection() {
               </div>
 
               {/* Stats Card */}
-              <div className="absolute -bottom-6 -right-6 bg-slate-900 text-white rounded-2xl p-6 shadow-xl">
+              <div className="absolute -bottom-6 -right-6 bg-[#000000] text-white rounded-2xl p-6 shadow-xl">
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-amber-400">20+</p>
-                  <p className="text-sm text-slate-400">Años de<br />Experiencia</p>
+                  <p className="text-4xl font-bold text-[#003E65]">20+</p>
+                  <p className="text-sm text-[#9C9C9C]">Años de<br />Experiencia</p>
                 </div>
               </div>
             </div>
@@ -60,23 +60,23 @@ export default function AttorneySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#003E65] font-semibold text-sm tracking-wider uppercase mb-4">
               Tu Abogado
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#000000] mb-2">
               Lic. Marcelo Zúñiga
             </h2>
-            <p className="text-xl text-amber-600 font-medium mb-6">
+            <p className="text-xl text-[#003E65] font-medium mb-6">
               Corporativo Zúñiga
             </p>
 
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            <p className="text-lg text-[#9C9C9C] mb-6 leading-relaxed">
               Nací en San Diego, California y siempre me he radicado en el área fronteriza San Diego-Tijuana. 
               Entiendo perfectamente la problemática del ámbito migratorio y me apasiona luchar por los ideales 
               y las necesidades de las personas que más lo necesitan.
             </p>
 
-            <p className="text-slate-600 mb-8 leading-relaxed">
+            <p className="text-[#9C9C9C] mb-8 leading-relaxed">
               Mi linaje me ha permitido tener una óptica legal más enfocada durante toda mi vida: 
               mi abuelo fue Juez y mi padre abogado internacional. Confiar un caso legal a un abogado 
               es poner la vida de una familia en una sola persona, y esa responsabilidad la llevo 
@@ -87,8 +87,8 @@ export default function AttorneySection() {
             <div className="space-y-3 mb-8">
               {achievements.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-[#003E65] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#000000]">{item}</span>
                 </div>
               ))}
             </div>
@@ -96,10 +96,10 @@ export default function AttorneySection() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-4">
               {credentials.map((cred, idx) => (
-                <div key={idx} className="bg-white rounded-xl p-4 border border-slate-200">
-                  <cred.icon className="w-6 h-6 text-amber-500 mb-2" />
-                  <p className="font-semibold text-slate-900">{cred.label}</p>
-                  <p className="text-sm text-slate-500">{cred.desc}</p>
+                <div key={idx} className="bg-white rounded-xl p-4 border border-[#003E65]/20">
+                  <cred.icon className="w-6 h-6 text-[#003E65] mb-2" />
+                  <p className="font-semibold text-[#000000]">{cred.label}</p>
+                  <p className="text-sm text-[#9C9C9C]">{cred.desc}</p>
                 </div>
               ))}
             </div>
