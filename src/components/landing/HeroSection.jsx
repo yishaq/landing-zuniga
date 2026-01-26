@@ -120,23 +120,39 @@ export default function HeroSection({ onScrollToForm }) {
               <div className="absolute -top-4 -right-4 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
               <div className="absolute -bottom-4 -left-4 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl" />
               
-              {/* Main Image Container */}
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-2 shadow-2xl">
+              {/* Main Image Container - Patriotic Immigration Theme */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://corpzuniga.com/wp-content/uploads/2025/10/Lic.-Marcelo-Zuniga-CorpZuniga_Tijuana.png"
-                  alt="Lic. Marcelo Zúñiga - Abogado de Inmigración"
-                  className="w-full h-auto rounded-2xl"
+                  src="https://images.unsplash.com/photo-1529259646948-c8789866000a?w=800&q=80"
+                  alt="El sueño americano - Inmigración a Estados Unidos"
+                  className="w-full h-[600px] object-cover"
                 />
                 
-                {/* Floating Card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl">
+                {/* Overlay gradient for better text visibility on floating cards */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+                
+                {/* Floating Success Card */}
+                <div className="absolute bottom-6 left-6 bg-white rounded-2xl p-4 shadow-xl backdrop-blur-sm bg-white/95">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-slate-900 font-bold">Miembro AILA</p>
-                      <p className="text-slate-500 text-sm">Asociación Americana</p>
+                      <p className="text-slate-900 font-bold">1,000+ Casos</p>
+                      <p className="text-slate-500 text-sm">Exitosos</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Experience Card */}
+                <div className="absolute top-6 right-6 bg-white rounded-2xl px-4 py-3 shadow-xl backdrop-blur-sm bg-white/95">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">20+</span>
+                    </div>
+                    <div>
+                      <p className="text-slate-900 font-bold text-sm">Años</p>
+                      <p className="text-slate-500 text-xs">Experiencia</p>
                     </div>
                   </div>
                 </div>
