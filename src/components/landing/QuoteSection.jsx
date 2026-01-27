@@ -36,8 +36,7 @@ export default function QuoteSection() {
             Agendar una Cita
           </h2>
           <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Through this site, you can schedule a personalised professional consultation 
-            for those who require legal and immigration assistance.
+            Programe fácilmente una consulta profesional a través de este sitio, diseñada para brindar asistencia legal y migratoria de manera personalizada.
           </p>
         </motion.div>
 
