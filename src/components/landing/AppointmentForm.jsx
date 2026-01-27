@@ -157,121 +157,15 @@ export default function AppointmentForm({ formRef }) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
-              <div className="space-y-5">
-                {/* Name */}
-                <div>
-                  <Label htmlFor="name" className="text-slate-700 font-medium mb-2 block">
-                    Nombre Completo *
-                  </Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                    <Input
-                      id="name"
-                      placeholder="Tu nombre"
-                      value={formData.full_name}
-                      onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <Label htmlFor="phone" className="text-slate-700 font-medium mb-2 block">
-                    Teléfono *
-                  </Label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+52 664 123 4567"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div>
-                  <Label htmlFor="email" className="text-slate-700 font-medium mb-2 block">
-                    Correo Electrónico
-                  </Label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="tu@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                    />
-                  </div>
-                </div>
-
-                {/* Service */}
-                <div>
-                  <Label htmlFor="service" className="text-slate-700 font-medium mb-2 block">
-                    Servicio de Interés *
-                  </Label>
-                  <Select
-                    value={formData.service}
-                    onValueChange={(value) => setFormData({ ...formData, service: value })}
-                  >
-                    <SelectTrigger className="h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-5 h-5 text-slate-400" />
-                        <SelectValue placeholder="Selecciona un servicio" />
-                      </div>
-                    </SelectTrigger>
-                    <SelectContent>
-                      {services.map((service) => (
-                        <SelectItem key={service.value} value={service.value}>
-                          {service.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <Label htmlFor="message" className="text-slate-700 font-medium mb-2 block">
-                    Cuéntanos sobre tu caso
-                  </Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Describe brevemente tu situación..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="min-h-[100px] border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                  />
-                </div>
-
-                {/* Submit */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-14 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                      Enviando...
-                    </>
-                  ) : (
-                    'Solicitar Cita'
-                  )}
-                </Button>
-
-                <p className="text-center text-sm text-slate-500">
-                  Al enviar aceptas que te contactemos para agendar tu cita
-                </p>
-              </div>
-            </form>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
+              {/* Calendly Widget */}
+              <div 
+                className="calendly-inline-widget" 
+                data-url="https://calendly.com/citascorpzuniga/citas" 
+                style={{ minWidth: '320px', height: '700px' }}
+              />
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
           </motion.div>
         </div>
       </div>
