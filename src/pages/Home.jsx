@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import HeroSection from '@/components/landing/HeroSection';
 import ServicesSection from '@/components/landing/ServicesSection';
+import QuoteSection from '@/components/landing/QuoteSection';
 import AttorneySection from '@/components/landing/AttorneySection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import AppointmentForm from '@/components/landing/AppointmentForm';
