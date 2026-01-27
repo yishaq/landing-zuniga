@@ -115,7 +115,7 @@ export default function AppointmentForm({ formRef }) {
             </p>
 
             {/* Price Card */}
-            <div className="bg-cyan-700 mb-8 p-6 rounded-2xl from-amber-500/20 to-amber-600/10 border border-amber-500/30">
+            <div className="bg-slate-400 mb-8 p-6 rounded-2xl from-amber-500/20 to-amber-600/10 border border-amber-500/30">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
                   <DollarSign className="w-6 h-6 text-white" />
@@ -123,12 +123,12 @@ export default function AppointmentForm({ formRef }) {
                 <div>
                   <h4 className="text-white font-semibold text-lg mb-1">Costo de Consulta</h4>
                   <div className="flex flex-wrap items-baseline gap-3">
-                    <span className="text-3xl font-bold text-amber-400">$1,200 MXN</span>
-                    <span className="text-slate-400">o</span>
-                    <span className="text-2xl font-bold text-amber-400">$70 USD</span>
+                    <span className="text-slate-50 text-3xl font-bold">$1,200 MXN</span>
+                    <span className="text-slate-100">o</span>
+                    <span className="bg-transparent text-slate-50 text-2xl font-bold">$70 USD</span>
                   </div>
-                  <p className="text-slate-400 text-sm mt-2">
-                    Incluye análisis de tu caso y recomendaciones legales
+                  <p className="text-slate-950 mt-2 text-sm">Incluye análisis de tu caso y recomendaciones legales
+
                   </p>
                 </div>
               </div>
