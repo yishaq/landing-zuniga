@@ -243,50 +243,70 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service, index) =>
-          <motion.div
-            key={service.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.15 }} className="bg-zinc-100 p-8 rounded-3xl group relative border-emerald-200 border hover:shadow-xl transition-all duration-500">
+        {/* Service Categories */}
+        <div className="space-y-16">
+          {serviceCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex}>
+              {/* Category Header */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                  {category.name}
+                </h3>
+                <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full" />
+              </motion.div>
 
+              {/* Services Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {category.services.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-white border border-slate-200 p-8 rounded-3xl group relative hover:shadow-xl transition-all duration-500">
 
-              {/* Icon */}
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg mb-6`}>
-                <service.icon className="w-7 h-7 text-white" />
+                    {/* Icon */}
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg mb-6`}>
+                      <service.icon className="w-7 h-7 text-white" />
+                    </div>
+
+                    {/* Content */}
+                    <h4 className="text-xl font-bold text-slate-900 mb-1">
+                      {service.title}
+                    </h4>
+                    <p className={`text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-4`}>
+                      {service.subtitle}
+                    </p>
+                    <p className="text-slate-600 mb-6 leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm text-slate-700">
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Arrow */}
+                    <div className="flex items-center gap-2 text-slate-900 font-medium group-hover:gap-3 transition-all text-sm">
+                      <span>Saber más</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-
-              {/* Content */}
-              <h3 className="text-2xl font-bold text-slate-900 mb-1">
-                {service.title}
-              </h3>
-              <p className={`text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-4`}>
-                {service.subtitle}
-              </p>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                {service.description}
-              </p>
-
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature, idx) =>
-              <li key={idx} className="flex items-center gap-2 text-sm text-slate-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                    {feature}
-                  </li>
-              )}
-              </ul>
-
-              {/* Arrow */}
-              <div className="flex items-center gap-2 text-slate-900 font-medium group-hover:gap-3 transition-all">
-                <span>Saber más</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </motion.div>
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </section>);
