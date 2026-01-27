@@ -37,7 +37,7 @@ export default function AttorneySection() {
               {/* Image Container */}
               <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://corpzuniga.com/wp-content/uploads/2025/10/Lic.-Marcelo-Zuniga-CorpZuniga_Tijuana.png"
+                  src="https://corpzuniga.com/wp-content/uploads/2023/05/Lic.-Marcelo-Zuniga-bio.png"
                   alt="Lic. Marcelo Zúñiga"
                   className="w-full h-auto"
                 />
