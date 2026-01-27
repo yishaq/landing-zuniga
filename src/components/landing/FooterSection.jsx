@@ -37,7 +37,7 @@ export default function FooterSection() {
             </p>
             <div className="flex items-center gap-4">
               <img 
-                src="https://corpzuniga.com/wp-content/uploads/2023/04/AILAasociaciones_.png"
+                src="https://corpzuniga.com/Zunig%20abogados_corto_blanco.svg"
                 alt="AILA"
                 className="h-10 object-contain brightness-0 invert opacity-60"
               />
