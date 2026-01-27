@@ -10,9 +10,9 @@ const services = [
     subtitle: 'Green Card',
     description: 'Obtén tu tarjeta de residencia permanente en Estados Unidos. Te guiamos en cada paso del proceso para que tú y tu familia puedan vivir y trabajar legalmente.',
     features: ['Peticiones familiares', 'Visa de trabajo', 'Inversión EB-5'],
-    color: 'from-[#003E65] to-[#002845]',
-    bgColor: 'bg-[#003E65]/5',
-    borderColor: 'border-[#003E65]/20',
+    color: 'from-emerald-500 to-emerald-600',
+    bgColor: 'bg-emerald-50',
+    borderColor: 'border-emerald-200',
   },
   {
     id: 'ajuste_estatus',
@@ -21,9 +21,9 @@ const services = [
     subtitle: 'Por Peticiones Familiares',
     description: 'Si tienes familiares ciudadanos o residentes en EE.UU., podemos ayudarte a ajustar tu estatus migratorio sin salir del país.',
     features: ['Cónyuge ciudadano', 'Padres ciudadanos', 'Hijos mayores de 21'],
-    color: 'from-[#003E65] to-[#002845]',
-    bgColor: 'bg-[#003E65]/5',
-    borderColor: 'border-[#003E65]/20',
+    color: 'from-blue-500 to-blue-600',
+    bgColor: 'bg-blue-50',
+    borderColor: 'border-blue-200',
   },
   {
     id: 'defensa_criminal',
@@ -32,9 +32,9 @@ const services = [
     subtitle: 'y Deportaciones',
     description: 'Defensa profesional en casos criminales que puedan afectar tu estatus migratorio. Luchamos para evitar deportaciones y proteger tu permanencia.',
     features: ['Cancelación de deportación', 'Asilo', 'Apelaciones'],
-    color: 'from-[#003E65] to-[#002845]',
-    bgColor: 'bg-[#003E65]/5',
-    borderColor: 'border-[#003E65]/20',
+    color: 'from-amber-500 to-amber-600',
+    bgColor: 'bg-amber-50',
+    borderColor: 'border-amber-200',
   },
 ];
 
@@ -50,13 +50,13 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[#003E65] font-semibold text-sm tracking-wider uppercase mb-4">
+          <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
             Nuestros Servicios
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#000000] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             Servicios Especializados
           </h2>
-          <p className="text-lg text-[#9C9C9C] max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Ofrecemos soluciones legales integrales para resolver tu situación migratoria
           </p>
         </motion.div>
@@ -78,28 +78,28 @@ export default function ServicesSection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-[#000000] mb-1">
+              <h3 className="text-2xl font-bold text-slate-900 mb-1">
                 {service.title}
               </h3>
-              <p className="text-sm font-medium text-[#003E65] mb-4">
+              <p className={`text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-4`}>
                 {service.subtitle}
               </p>
-              <p className="text-[#9C9C9C] mb-6 leading-relaxed">
+              <p className="text-slate-600 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-[#000000]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#003E65]" />
+                  <li key={idx} className="flex items-center gap-2 text-sm text-slate-700">
+                    <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color}`} />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               {/* Arrow */}
-              <div className="flex items-center gap-2 text-[#003E65] font-medium group-hover:gap-3 transition-all">
+              <div className="flex items-center gap-2 text-slate-900 font-medium group-hover:gap-3 transition-all">
                 <span>Saber más</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
