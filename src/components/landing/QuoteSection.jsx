@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 
 export default function QuoteSection() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-20 sm:py-28 bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,10 +47,11 @@ export default function QuoteSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          <div className="aspect-video w-full">
-<div class="calendly-inline-widget" data-url="https://calendly.com/citascorpzuniga/citas?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=004e7e" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          </div>
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/citascorpzuniga/citas?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=004e7e" 
+            style={{minWidth: '320px', height: '700px'}}
+          />
         </motion.div>
       </div>
     </section>
