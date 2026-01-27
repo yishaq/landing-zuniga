@@ -11,24 +11,24 @@ const serviceLabels = {
   perdon_migratorio: 'Perdón Migratorio',
   ciudadania: 'Ciudadanía',
   visa: 'Visa',
-  otro: 'Otro',
+  otro: 'Otro'
 };
 
 const StarRating = ({ rating }) => {
   return (
     <div className="flex items-center gap-1">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <Star
-          key={star}
-          className={`w-5 h-5 ${
-            star <= rating
-              ? 'fill-amber-400 text-amber-400'
-              : 'fill-slate-200 text-slate-200'
-          }`}
-        />
-      ))}
-    </div>
-  );
+      {[1, 2, 3, 4, 5].map((star) =>
+      <Star
+        key={star}
+        className={`w-5 h-5 ${
+        star <= rating ?
+        'fill-amber-400 text-amber-400' :
+        'fill-slate-200 text-slate-200'}`
+        } />
+
+      )}
+    </div>);
+
 };
 
 const TestimonialCard = ({ testimonial, index }) => {
@@ -38,8 +38,8 @@ const TestimonialCard = ({ testimonial, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow relative"
-    >
+      className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+
       {/* Quote Icon */}
       <div className="absolute top-6 right-6 opacity-10">
         <Quote className="w-16 h-16 text-amber-500" />
@@ -57,35 +57,35 @@ const TestimonialCard = ({ testimonial, index }) => {
           <div>
             <h4 className="font-semibold text-slate-900">{testimonial.client_name}</h4>
             <div className="flex flex-wrap items-center gap-2 mt-1">
-              {testimonial.service && (
-                <span className="text-sm text-amber-600 font-medium">
+              {testimonial.service &&
+              <span className="text-sm text-amber-600 font-medium">
                   {serviceLabels[testimonial.service] || testimonial.service}
                 </span>
-              )}
-              {testimonial.location && (
-                <>
+              }
+              {testimonial.location &&
+              <>
                   <span className="text-slate-400">•</span>
                   <span className="text-sm text-slate-500">{testimonial.location}</span>
                 </>
-              )}
+              }
             </div>
           </div>
-          {testimonial.is_featured && (
-            <div className="flex-shrink-0">
+          {testimonial.is_featured &&
+          <div className="flex-shrink-0">
               <Award className="w-5 h-5 text-amber-500" />
             </div>
-          )}
+          }
         </div>
       </div>
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 export default function TestimonialsSection() {
   const { data: testimonials = [], isLoading } = useQuery({
     queryKey: ['testimonials'],
     queryFn: () => base44.entities.Testimonial.list('-rating', 50),
-    initialData: [],
+    initialData: []
   });
 
   // Show featured testimonials first, then others
@@ -102,12 +102,12 @@ export default function TestimonialsSection() {
   }
 
   // Calculate average rating
-  const averageRating = testimonials.length > 0
-    ? (testimonials.reduce((sum, t) => sum + (t.rating || 0), 0) / testimonials.length).toFixed(1)
-    : 0;
+  const averageRating = testimonials.length > 0 ?
+  (testimonials.reduce((sum, t) => sum + (t.rating || 0), 0) / testimonials.length).toFixed(1) :
+  0;
 
   return (
-    <section className="py-20 sm:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section className="bg-[#ffffff] py-20 sm:py-28 from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -115,8 +115,8 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+          transition={{ duration: 0.6 }}>
+
           <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
             Testimonios
           </span>
@@ -128,16 +128,16 @@ export default function TestimonialsSection() {
           </p>
 
           {/* Stats Bar */}
-          {testimonials.length > 0 && (
-            <div className="inline-flex items-center gap-6 bg-white rounded-2xl px-8 py-4 shadow-lg">
+          {testimonials.length > 0 &&
+          <div className="inline-flex items-center gap-6 bg-white rounded-2xl px-8 py-4 shadow-lg">
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star
-                      key={star}
-                      className="w-5 h-5 fill-amber-400 text-amber-400"
-                    />
-                  ))}
+                  {[1, 2, 3, 4, 5].map((star) =>
+                <Star
+                  key={star}
+                  className="w-5 h-5 fill-amber-400 text-amber-400" />
+
+                )}
                 </div>
                 <span className="text-2xl font-bold text-slate-900">{averageRating}</span>
               </div>
@@ -147,18 +147,18 @@ export default function TestimonialsSection() {
                 <p className="text-sm text-slate-600">Clientes satisfechos</p>
               </div>
             </div>
-          )}
+          }
         </motion.div>
 
         {/* Testimonials Grid */}
-        {isLoading ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 shadow-lg animate-pulse">
+        {isLoading ?
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {[1, 2, 3, 4, 5, 6].map((i) =>
+          <div key={i} className="bg-white rounded-2xl p-8 shadow-lg animate-pulse">
                 <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <div key={s} className="w-5 h-5 bg-slate-200 rounded" />
-                  ))}
+                  {[1, 2, 3, 4, 5].map((s) =>
+              <div key={s} className="w-5 h-5 bg-slate-200 rounded" />
+              )}
                 </div>
                 <div className="space-y-3">
                   <div className="h-4 bg-slate-200 rounded w-full" />
@@ -170,19 +170,19 @@ export default function TestimonialsSection() {
                   <div className="h-3 bg-slate-200 rounded w-1/3 mt-2" />
                 </div>
               </div>
-            ))}
+          )}
+          </div> :
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {displayTestimonials.map((testimonial, index) =>
+          <TestimonialCard
+            key={testimonial.id}
+            testimonial={testimonial}
+            index={index} />
+
+          )}
           </div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {displayTestimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={testimonial.id}
-                testimonial={testimonial}
-                index={index}
-              />
-            ))}
-          </div>
-        )}
+        }
 
         {/* Google Reviews Link */}
         <motion.div
@@ -190,23 +190,23 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
+          transition={{ duration: 0.6, delay: 0.3 }}>
+
           <a
             href="https://www.google.com/maps/place/Corporativo+Zu%C3%B1iga/@32.5136052,-117.0125967,17z/data=!4m8!3m7!1s0x80d9484764f04767:0xbe082fb14cf9386f!8m2!3d32.5136052!4d-117.0100218!9m1!1b1!16s%2Fg%2F11j5gb4ql_"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-600 transition-colors font-medium"
-          >
-            <img 
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-600 transition-colors font-medium">
+
+            <img
               src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
               alt="Google"
-              className="h-6"
-            />
+              className="h-6" />
+
             <span>Ver más opiniones en Google Maps</span>
           </a>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
