@@ -17,6 +17,7 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection onScrollToForm={scrollToForm} />
       <ServicesSection />
+      <QuoteSection />
       <AttorneySection />
       <TestimonialsSection />
       <AppointmentForm formRef={formRef} />
