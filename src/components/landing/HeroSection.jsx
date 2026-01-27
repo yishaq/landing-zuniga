@@ -65,14 +65,14 @@ export default function HeroSection({ onScrollToForm }) {
               <span className="text-amber-400 text-sm font-medium">Más de 1,000 casos de éxito</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Soluciones
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-300">
-                Migratorias
-              </span>
-              <span className="block text-3xl sm:text-4xl lg:text-5xl mt-2 text-slate-300 font-light">
-                a su alcance
-              </span>
+            <h1 className="text-[#ffffff] mb-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Abogados
+de Inmigración
+en Tijuana
+
+
+
+
+
             </h1>
 
             <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
