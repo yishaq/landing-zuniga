@@ -35,9 +35,20 @@ export default function QuoteSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Agendar una Cita
           </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
             Programe fácilmente una consulta profesional a través de este sitio, diseñada para brindar asistencia legal y migratoria de manera personalizada.
           </p>
+
+          {/* Pricing Card */}
+          <div className="inline-block bg-white/10 backdrop-blur-sm border border-amber-500/30 rounded-2xl px-8 py-6">
+            <h3 className="text-amber-400 font-bold text-lg mb-3">Costo de Consulta</h3>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="text-white text-3xl font-bold">$1,200 MXN</span>
+              <span className="text-slate-300">o</span>
+              <span className="text-white text-3xl font-bold">$70 USD</span>
+            </div>
+            <p className="text-slate-300 text-sm">Incluye análisis de tu caso y recomendaciones legales</p>
+          </div>
         </motion.div>
 
         {/* Iframe Container */}
