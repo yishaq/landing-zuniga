@@ -8,11 +8,11 @@ export default function HeroSection({ onScrollToForm }) {
     <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full" 
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
+        <div className="bg-blue-900 absolute top-0 left-0 w-full h-full"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }} />
+
       </div>
 
       {/* Golden Accent Line */}
@@ -24,11 +24,11 @@ export default function HeroSection({ onScrollToForm }) {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Brand Logo */}
             <div className="flex items-center gap-4">
-              <img 
+              <img
                 src="https://corpzuniga.com/Zunig%20abogados_corto_blanco.svg"
                 alt="Corporativo Zúñiga"
-                className="h-12 w-auto"
-              />
+                className="h-12 w-auto" />
+
               <div className="hidden sm:block h-8 w-px bg-slate-700" />
               <div className="hidden sm:flex items-center gap-2 text-amber-400 font-medium text-sm">
                 <Shield className="w-4 h-4" />
@@ -58,8 +58,8 @@ export default function HeroSection({ onScrollToForm }) {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
+
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
               <span className="text-amber-400 text-sm font-medium">Más de 1,000 casos de éxito</span>
@@ -82,21 +82,21 @@ export default function HeroSection({ onScrollToForm }) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button 
-                onClick={onScrollToForm}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40"
-              >
+              <Button
+                onClick={onScrollToForm} className="bg-amber-300 text-slate-900 px-8 py-6 text-lg font-semibold rounded-xl inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-primary/90 h-9 from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40">
+
+
                 Agendar Consulta
               </Button>
-              <a 
+              <a
                 href="https://wa.me/526643207699?text=Hola,%20me%20gustaría%20agendar%20una%20consulta%20migratoria"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button 
-                  variant="outline"
-                  className="border-2 border-slate-600 text-white hover:bg-slate-800 px-8 py-6 text-lg rounded-xl w-full"
-                >
+                rel="noopener noreferrer">
+
+                <Button
+                  variant="outline" className="bg-teal-700 text-white px-8 py-6 text-lg font-medium rounded-xl inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow-sm hover:text-accent-foreground h-9 border-2 border-slate-600 hover:bg-slate-800 w-full">
+
+
                   WhatsApp
                 </Button>
               </a>
@@ -124,8 +124,8 @@ export default function HeroSection({ onScrollToForm }) {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
+            className="relative hidden lg:block">
+
             <div className="relative">
               {/* Decorative Elements */}
               <div className="absolute -top-4 -right-4 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
@@ -133,11 +133,11 @@ export default function HeroSection({ onScrollToForm }) {
               
               {/* Main Image Container - Patriotic Immigration Theme */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img 
+                <img
                   src="https://corpzuniga.com/wp-content/uploads/2023/04/home_img.png"
                   alt="El sueño americano - Inmigración a Estados Unidos"
-                  className="w-full h-[600px] object-cover"
-                />
+                  className="w-full h-[600px] object-cover" />
+
                 
                 {/* Overlay gradient for better text visibility on floating cards */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
@@ -173,16 +173,16 @@ export default function HeroSection({ onScrollToForm }) {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
+          transition={{ duration: 2, repeat: Infinity }}>
+
           <button onClick={onScrollToForm} className="text-slate-500 hover:text-amber-400 transition-colors">
             <ArrowDown className="w-6 h-6" />
           </button>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
