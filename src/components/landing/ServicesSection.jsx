@@ -263,7 +263,7 @@ export default function ServicesSection() {
                     className="bg-white border border-slate-200 p-8 rounded-3xl group relative hover:shadow-xl transition-all duration-500">
 
                     {/* Icon */}
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg mb-6`}>
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg mb-6`}>
                       <service.icon className="w-7 h-7 text-white" />
                     </div>
 
