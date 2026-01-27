@@ -61,13 +61,13 @@ export default function AttorneySection() {
             transition={{ duration: 0.8 }}>
 
             <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
-              Tu Abogado
+              Abogados 100% calificados en Mexico y Estados Unidos.
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">
               Lic. Marcelo Zúñiga
             </h2>
             <p className="text-xl text-amber-600 font-medium mb-6">
-              Corporativo Zúñiga
+              Abogado de inmigración
             </p>
 
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
