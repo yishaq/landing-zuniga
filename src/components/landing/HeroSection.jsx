@@ -25,7 +25,7 @@ export default function HeroSection({ onScrollToForm }) {
             {/* Brand Logo */}
             <div className="flex items-center gap-4">
               <img 
-                src="https://corpzuniga.com/wp-content/uploads/2023/04/cropped-Logo-Corporativo-Zuniga-1.png"
+                src="https://corpzuniga.com/Zunig%20abogados_corto_blanco.svg"
                 alt="Corporativo Zúñiga"
                 className="h-12 w-auto"
               />
