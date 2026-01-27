@@ -10,10 +10,10 @@ import { Calendar, Phone, Mail, User, CheckCircle, DollarSign, Loader2 } from 'l
 import { toast } from 'sonner';
 
 const services = [
-  { value: 'green_card', label: 'Residencia Permanente (Green Card)' },
-  { value: 'ajuste_estatus', label: 'Ajuste de Estatus por Petición Familiar' },
-  { value: 'defensa_criminal', label: 'Defensa Criminal y Deportaciones' },
-];
+{ value: 'green_card', label: 'Residencia Permanente (Green Card)' },
+{ value: 'ajuste_estatus', label: 'Ajuste de Estatus por Petición Familiar' },
+{ value: 'defensa_criminal', label: 'Defensa Criminal y Deportaciones' }];
+
 
 export default function AppointmentForm({ formRef }) {
   const [formData, setFormData] = useState({
@@ -21,14 +21,14 @@ export default function AppointmentForm({ formRef }) {
     email: '',
     phone: '',
     service: '',
-    message: '',
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.full_name || !formData.phone || !formData.service) {
       toast.error('Por favor completa los campos requeridos');
       return;
@@ -37,7 +37,7 @@ export default function AppointmentForm({ formRef }) {
     setIsSubmitting(true);
 
     await base44.entities.Appointment.create(formData);
-    
+
     setIsSuccess(true);
     toast.success('¡Solicitud enviada! Te contactaremos pronto.');
     setIsSubmitting(false);
@@ -47,11 +47,11 @@ export default function AppointmentForm({ formRef }) {
     return (
       <section ref={formRef} className="py-20 sm:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl"
-          >
+            className="bg-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl">
+
             <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-10 h-10 text-white" />
             </div>
@@ -64,27 +64,27 @@ export default function AppointmentForm({ formRef }) {
             </p>
             <div className="bg-slate-50 rounded-2xl p-6 mb-8">
               <p className="text-slate-600 mb-2">¿Necesitas atención inmediata?</p>
-              <a 
+              <a
                 href="https://wa.me/526643207699"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700"
-              >
+                className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700">
+
                 <Phone className="w-5 h-5" />
                 Escríbenos por WhatsApp
               </a>
             </div>
-            <Button 
+            <Button
               onClick={() => setIsSuccess(false)}
               variant="outline"
-              className="border-2"
-            >
+              className="border-2">
+
               Enviar otra solicitud
             </Button>
           </motion.div>
         </div>
-      </section>
-    );
+      </section>);
+
   }
 
   return (
@@ -100,8 +100,8 @@ export default function AppointmentForm({ formRef }) {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+            transition={{ duration: 0.6 }}>
+
             <span className="inline-block text-amber-400 font-semibold text-sm tracking-wider uppercase mb-4">
               Agenda Tu Cita
             </span>
@@ -115,7 +115,7 @@ export default function AppointmentForm({ formRef }) {
             </p>
 
             {/* Price Card */}
-            <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 rounded-2xl p-6 mb-8">
+            <div className="bg-cyan-700 mb-8 p-6 rounded-2xl from-amber-500/20 to-amber-600/10 border border-amber-500/30">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
                   <DollarSign className="w-6 h-6 text-white" />
@@ -137,16 +137,16 @@ export default function AppointmentForm({ formRef }) {
             {/* Benefits */}
             <div className="space-y-4">
               {[
-                'Atención personalizada con el Lic. Zúñiga',
-                'Análisis completo de tu situación migratoria',
-                'Opciones y estrategias legales para tu caso',
-                'Atención en español e inglés',
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3">
+              'Atención personalizada con el Lic. Zúñiga',
+              'Análisis completo de tu situación migratoria',
+              'Opciones y estrategias legales para tu caso',
+              'Atención en español e inglés'].
+              map((item, idx) =>
+              <div key={idx} className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
                   <span className="text-slate-300">{item}</span>
                 </div>
-              ))}
+              )}
             </div>
           </motion.div>
 
@@ -155,8 +155,8 @@ export default function AppointmentForm({ formRef }) {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+            transition={{ duration: 0.6 }}>
+
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
               <div className="space-y-5">
                 {/* Name */}
@@ -171,8 +171,8 @@ export default function AppointmentForm({ formRef }) {
                       placeholder="Tu nombre"
                       value={formData.full_name}
                       onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                    />
+                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500" />
+
                   </div>
                 </div>
 
@@ -189,8 +189,8 @@ export default function AppointmentForm({ formRef }) {
                       placeholder="+52 664 123 4567"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                    />
+                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500" />
+
                   </div>
                 </div>
 
@@ -207,8 +207,8 @@ export default function AppointmentForm({ formRef }) {
                       placeholder="tu@email.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                    />
+                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500" />
+
                   </div>
                 </div>
 
@@ -219,8 +219,8 @@ export default function AppointmentForm({ formRef }) {
                   </Label>
                   <Select
                     value={formData.service}
-                    onValueChange={(value) => setFormData({ ...formData, service: value })}
-                  >
+                    onValueChange={(value) => setFormData({ ...formData, service: value })}>
+
                     <SelectTrigger className="h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-5 h-5 text-slate-400" />
@@ -228,11 +228,11 @@ export default function AppointmentForm({ formRef }) {
                       </div>
                     </SelectTrigger>
                     <SelectContent>
-                      {services.map((service) => (
-                        <SelectItem key={service.value} value={service.value}>
+                      {services.map((service) =>
+                      <SelectItem key={service.value} value={service.value}>
                           {service.label}
                         </SelectItem>
-                      ))}
+                      )}
                     </SelectContent>
                   </Select>
                 </div>
@@ -247,24 +247,24 @@ export default function AppointmentForm({ formRef }) {
                     placeholder="Describe brevemente tu situación..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="min-h-[100px] border-slate-200 focus:border-amber-500 focus:ring-amber-500"
-                  />
+                    className="min-h-[100px] border-slate-200 focus:border-amber-500 focus:ring-amber-500" />
+
                 </div>
 
                 {/* Submit */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-14 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all"
-                >
-                  {isSubmitting ? (
-                    <>
+                  className="w-full h-14 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all">
+
+                  {isSubmitting ?
+                  <>
                       <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                       Enviando...
-                    </>
-                  ) : (
-                    'Solicitar Cita'
-                  )}
+                    </> :
+
+                  'Solicitar Cita'
+                  }
                 </Button>
 
                 <p className="text-center text-sm text-slate-500">
@@ -275,6 +275,6 @@ export default function AppointmentForm({ formRef }) {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
