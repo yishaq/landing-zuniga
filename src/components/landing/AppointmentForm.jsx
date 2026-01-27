@@ -115,7 +115,7 @@ export default function AppointmentForm({ formRef }) {
             </p>
 
             {/* Price Card */}
-            <div className="bg-slate-400 mb-8 p-6 rounded-2xl from-amber-500/20 to-amber-600/10 border border-amber-500/30">
+            <div className="bg-slate-400 mb-8 px-6 py-6 rounded-2xl from-amber-500/20 to-amber-600/10 border border-amber-500/30">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
                   <DollarSign className="w-6 h-6 text-white" />
