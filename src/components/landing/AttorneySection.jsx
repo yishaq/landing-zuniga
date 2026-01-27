@@ -60,20 +60,20 @@ export default function AttorneySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}>
 
-            <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
-              Abogados 100% calificados en Mexico y Estados Unidos.
+            <span className="text-slate-300 mb-4 text-sm font-semibold uppercase tracking-wider inline-block">ABOGADOS 100% CALIFICADOS EN MEXICO Y ESTADOS UNIDOS.
+
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">
               Lic. Marcelo Zúñiga
             </h2>
-            <p className="text-xl text-amber-600 font-medium mb-6">
-              Abogado de inmigración
+            <p className="text-slate-800 mb-6 text-xl font-medium">Abogado de inmigración
+
             </p>
 
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Nací en San Diego, California y siempre me he radicado en el área fronteriza San Diego-Tijuana. 
-              Entiendo perfectamente la problemática del ámbito migratorio y me apasiona luchar por los ideales 
-              y las necesidades de las personas que más lo necesitan.
+            <p className="text-slate-600 mb-6 text-base leading-relaxed">Nací en San Diego, California y siempre me he radicado en el área fronteriza San Diego-Tijuana. Entiendo perfectamente la problemática del ámbito migratorio y me apasiona luchar por los ideales y las necesidades de las personas que más lo necesitan.
+
+
+
             </p>
 
             <p className="text-slate-600 mb-8 leading-relaxed">
