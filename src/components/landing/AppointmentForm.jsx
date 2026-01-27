@@ -157,14 +157,15 @@ export default function AppointmentForm({ formRef }) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
-              {/* Calendly Widget */}
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/citascorpzuniga/citas" 
-                style={{ minWidth: '320px', height: '700px' }}
+            <div className="bg-white rounded-3xl p-4 sm:p-6 shadow-2xl">
+              {/* Calendly iframe */}
+              <iframe 
+                src="https://calendly.com/citascorpzuniga/citas" 
+                width="100%" 
+                height="700" 
+                frameBorder="0"
+                className="rounded-2xl"
               />
-              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
           </motion.div>
         </div>
