@@ -35,15 +35,10 @@ export default function QuoteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-3xl shadow-2xl overflow-hidden"
-        >
+          className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="aspect-video w-full">
-            <iframe
-              src="https://calendly.com"
-              className="w-full h-full"
-              frameBorder="0"
-              title="Schedule Consultation"
-            />
+<div class="calendly-inline-widget" data-url="https://calendly.com/citascorpzuniga/citas?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=004e7e" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
           </div>
         </motion.div>
       </div>
