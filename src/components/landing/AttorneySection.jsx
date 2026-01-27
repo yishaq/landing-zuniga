@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 import { Award, BookOpen, Globe, Users, CheckCircle } from 'lucide-react';
 
 const credentials = [
-{ icon: Award, label: 'Miembro AILA', desc: 'Asociación Americana de Abogados de Inmigración' },
-{ icon: Globe, label: 'Bilingüe', desc: 'Servicio en Español e Inglés' },
-{ icon: BookOpen, label: '20+ Años', desc: 'De experiencia legal' },
-{ icon: Users, label: '1,000+', desc: 'Casos exitosos' }];
-
+  { icon: Award, label: 'Miembro AILA', desc: 'Asociación Americana de Abogados de Inmigración' },
+  { icon: Globe, label: 'Bilingüe', desc: 'Servicio en Español e Inglés' },
+  { icon: BookOpen, label: '20+ Años', desc: 'De experiencia legal' },
+  { icon: Users, label: '1,000+', desc: 'Casos exitosos' },
+];
 
 const achievements = [
-'Nativo de San Diego, California',
-'Especialista en zona fronteriza San Diego-Tijuana',
-'Precedentes legales en cortes migratorias y criminales',
-'Tradición familiar de abogados y jueces',
-'Atención personalizada en México y Estados Unidos'];
-
+  'Nativo de San Diego, California',
+  'Especialista en zona fronteriza San Diego-Tijuana',
+  'Precedentes legales en cortes migratorias y criminales',
+  'Tradición familiar de abogados y jueces',
+  'Atención personalizada en México y Estados Unidos',
+];
 
 export default function AttorneySection() {
   return (
@@ -28,19 +28,19 @@ export default function AttorneySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative">
-
+            className="relative"
+          >
             <div className="relative">
               {/* Background Decoration */}
-              <div className="bg-sky-700 rounded-3xl absolute inset-0 from-amber-200 to-amber-100 transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-200 to-amber-100 rounded-3xl transform rotate-3" />
               
               {/* Image Container */}
               <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <img 
                   src="https://corpzuniga.com/wp-content/uploads/2023/05/Lic.-Marcelo-Zuniga-bio.png"
                   alt="Lic. Marcelo Zúñiga"
-                  className="w-full h-auto" />
-
+                  className="w-full h-auto"
+                />
               </div>
 
               {/* Stats Card */}
@@ -58,22 +58,22 @@ export default function AttorneySection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}>
-
-            <span className="text-slate-300 mb-4 text-sm font-semibold uppercase tracking-wider inline-block">ABOGADOS 100% CALIFICADOS EN MEXICO Y ESTADOS UNIDOS.
-
+            transition={{ duration: 0.8 }}
+          >
+            <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
+              Tu Abogado
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">
               Lic. Marcelo Zúñiga
             </h2>
-            <p className="text-slate-800 mb-6 text-xl font-medium">Abogado de inmigración
-
+            <p className="text-xl text-amber-600 font-medium mb-6">
+              Corporativo Zúñiga
             </p>
 
-            <p className="text-slate-600 mb-6 text-base leading-relaxed">Nací en San Diego, California y siempre me he radicado en el área fronteriza San Diego-Tijuana. Entiendo perfectamente la problemática del ámbito migratorio y me apasiona luchar por los ideales y las necesidades de las personas que más lo necesitan.
-
-
-
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              Nací en San Diego, California y siempre me he radicado en el área fronteriza San Diego-Tijuana. 
+              Entiendo perfectamente la problemática del ámbito migratorio y me apasiona luchar por los ideales 
+              y las necesidades de las personas que más lo necesitan.
             </p>
 
             <p className="text-slate-600 mb-8 leading-relaxed">
@@ -85,27 +85,27 @@ export default function AttorneySection() {
 
             {/* Achievements */}
             <div className="space-y-3 mb-8">
-              {achievements.map((item, idx) =>
-              <div key={idx} className="flex items-start gap-3">
+              {achievements.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700">{item}</span>
                 </div>
-              )}
+              ))}
             </div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {credentials.map((cred, idx) =>
-              <div key={idx} className="bg-white rounded-xl p-4 border border-slate-200">
+              {credentials.map((cred, idx) => (
+                <div key={idx} className="bg-white rounded-xl p-4 border border-slate-200">
                   <cred.icon className="w-6 h-6 text-amber-500 mb-2" />
                   <p className="font-semibold text-slate-900">{cred.label}</p>
                   <p className="text-sm text-slate-500">{cred.desc}</p>
                 </div>
-              )}
+              ))}
             </div>
           </motion.div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
