@@ -134,7 +134,7 @@ export default function HeroSection({ onScrollToForm }) {
               {/* Main Image Container - Patriotic Immigration Theme */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1529259646948-c8789866000a?w=800&q=80"
+                  src="https://corpzuniga.com/wp-content/uploads/2023/04/home_img.png"
                   alt="El sueño americano - Inmigración a Estados Unidos"
                   className="w-full h-[600px] object-cover"
                 />
