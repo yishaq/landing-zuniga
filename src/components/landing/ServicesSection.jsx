@@ -80,15 +80,6 @@ const serviceCategories = [
         color: 'from-red-500 to-red-700',
       },
       {
-        id: 'residencia_temporal_mexico',
-        icon: Globe,
-        title: 'Residencia Temporal y Permanente en México',
-        subtitle: 'Tu Hogar en México',
-        description: 'Facilitamos tu proceso de Residencia Temporal y Permanente en México. Nuestro equipo te guiará paso a paso para que encuentres tu hogar en México de manera efectiva y segura.',
-        features: ['Visas de Residencia', 'Trámites de naturalización', 'Asesoría legal'],
-        color: 'from-green-500 to-green-700',
-      },
-      {
         id: 'renovacion_visas_residencias',
         icon: RefreshCw,
         title: 'Renovación de Visas y Residencias',
