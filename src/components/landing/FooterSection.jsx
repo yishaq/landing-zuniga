@@ -13,7 +13,7 @@ export default function FooterSection() {
               <p className="text-slate-800">Atención inmediata en horario hábil</p>
             </div>
             <a
-              href="https://wa.me/526643207699?text=Hola,%20me%20gustaría%20información%20sobre%20servicios%20migratorios"
+              href="https://wa.me/526643540535?text=Hola,%20me%20gustaría%20información%20sobre%20servicios%20migratorios"
               target="_blank"
               rel="noopener noreferrer" className="bg-teal-800 text-white px-6 py-3 font-semibold rounded-xl inline-flex items-center gap-2 hover:bg-slate-800 transition-colors">WhatsApp
 
