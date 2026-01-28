@@ -78,7 +78,7 @@ export default function ContactForm() {
               Enviar otra solicitud
             </Button>
             <a
-              href="https://wa.me/526642955660"
+              href="https://wa.me/5216643540535"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
@@ -200,11 +200,11 @@ export default function ContactForm() {
             <p>O contáctanos directamente:</p>
             <div className="flex flex-col sm:flex-row gap-2 justify-center mt-2">
               <a
-                href="tel:+526642955660"
+                href="tel:+526643540535"
                 className="text-amber-600 hover:text-amber-700 flex items-center justify-center gap-1"
               >
                 <Phone className="w-4 h-4" />
-                664-295-5660
+                664-354-0535
               </a>
               <span className="hidden sm:inline">•</span>
               <a

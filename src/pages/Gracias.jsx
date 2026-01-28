@@ -108,7 +108,7 @@ export default function GraciasPage() {
               <div>
                 <h4 className="font-semibold text-slate-900 text-sm mb-1">¿Dónde está mi confirmación?</h4>
                 <p className="text-slate-600 text-sm">
-                  Revisa tu correo (incluida la carpeta de spam) o accede a tu cuenta de Calendly para ver los detalles de tu cita. También puedes llamarnos al +52 664 320 7699.
+                  Revisa tu correo (incluida la carpeta de spam) o accede a tu cuenta de Calendly para ver los detalles de tu cita. También puedes llamarnos al +52 664 354 0535.
                 </p>
               </div>
 
@@ -137,7 +137,7 @@ export default function GraciasPage() {
             <div className="h-px bg-slate-200 my-5" />
 
             <p className="text-xs text-slate-500">
-              ¿Más dudas? Llámanos al <a href="tel:+526643207699" className="text-[#003E65] hover:underline">+52 664 320 7699</a> o escríbenos por <a href="https://wa.me/5216643540535" target="_blank" rel="noopener" className="text-[#003E65] hover:underline">WhatsApp</a>.
+              ¿Más dudas? Llámanos al <a href="tel:+526643540535" className="text-[#003E65] hover:underline">+52 664 354 0535</a> o escríbenos por <a href="https://wa.me/5216643540535" target="_blank" rel="noopener" className="text-[#003E65] hover:underline">WhatsApp</a>.
             </p>
           </motion.div>
 
@@ -168,14 +168,14 @@ export default function GraciasPage() {
                 </a>
 
                 <a 
-                  href="tel:+526643207699"
+                  href="tel:+526643540535"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
                   <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
                     <Phone className="w-5 h-5 text-slate-700" />
                   </div>
                   <div>
                     <p className="font-semibold text-slate-900 text-sm">Teléfono</p>
-                    <p className="text-xs text-slate-600">+52 664 320 7699</p>
+                    <p className="text-xs text-slate-600">+52 664 354 0535</p>
                   </div>
                 </a>
 
