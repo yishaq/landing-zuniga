@@ -1,22 +1,65 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Shield, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Granim from 'granim';
 
 export default function HeroSection({ onScrollToForm }) {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      const granimInstance = new Granim({
+        element: canvasRef.current,
+        direction: 'diagonal',
+        isPausedWhenNotInView: true,
+        opacity: [1, 1],
+        stateTransitionSpeed: 500,
+        states: {
+          "default-state": {
+            gradients: [
+              ['#0f172a', '#1e293b', '#0c4a6e'],
+              ['#1e293b', '#0c4a6e', '#065f46'],
+              ['#0c4a6e', '#065f46', '#713f12'],
+              ['#065f46', '#713f12', '#7c2d12'],
+              ['#713f12', '#7c2d12', '#0f172a'],
+              ['#7c2d12', '#0f172a', '#1e293b']
+            ],
+            transitionSpeed: 8000
+          }
+        }
+      });
+
+      return () => {
+        if (granimInstance) {
+          granimInstance.destroy();
+        }
+      };
+    }
+  }, []);
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Animated Gradient Background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full"
+        style={{ display: 'block' }}
+      />
+
+      {/* Overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/30 to-slate-900/60" />
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
-
       </div>
 
       {/* Golden Accent Line */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 shadow-lg shadow-amber-500/50" />
 
       {/* Top Bar */}
       <div className="relative z-10 bg-slate-900/80 backdrop-blur-sm border-b border-slate-700/50">
