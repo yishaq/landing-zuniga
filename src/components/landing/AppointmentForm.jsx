@@ -109,8 +109,8 @@ export default function AppointmentForm({ formRef }) {
               Consulta Migratoria
               <span className="block text-amber-400">Personalizada</span>
             </h2>
-            <p className="text-lg text-slate-400 mb-4 leading-relaxed">También atendemos asuntos del ámbito Criminal, como transporte o posesión de drogas, conspiración, cruce de Drogas a Estados Unidos, casos de “Mula Ciega”, Investigaciones de la DEA y FBI, recabamos su estatus legal, sus récords federales y estatales.
-
+            <p className="text-lg text-slate-400 mb-4 leading-relaxed">
+              Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
             </p>
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
               Toda la información irrelevante enviada se eliminará automáticamente.
@@ -248,7 +248,7 @@ export default function AppointmentForm({ formRef }) {
                 {/* Message */}
                 <div>
                   <Label htmlFor="message" className="text-slate-700 font-medium mb-2 block">
-                    Cuéntanos sobre tu caso
+                    Descripción del Asunto
                   </Label>
                   <Textarea
                     id="message"

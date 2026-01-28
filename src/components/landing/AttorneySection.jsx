@@ -96,7 +96,7 @@ export default function AttorneySection() {
             {/* Credentials Grid */}
             <div className="grid grid-cols-2 gap-4">
               {credentials.map((cred, idx) =>
-              <div key={idx} className="bg-gray-100 p-4 rounded-xl border border-slate-200">
+              <div key={idx} className="bg-white rounded-xl p-4 border border-slate-200">
                   <cred.icon className="w-6 h-6 text-amber-500 mb-2" />
                   <p className="font-semibold text-slate-900">{cred.label}</p>
                   <p className="text-sm text-slate-500">{cred.desc}</p>
