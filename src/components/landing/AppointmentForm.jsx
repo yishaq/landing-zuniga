@@ -274,7 +274,7 @@ También atendemos asuntos del ámbito Criminal, como transporte o posesión de 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-14 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all">
+                  className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold py-5 sm:py-6 text-base sm:text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all active:scale-98 min-h-[56px] touch-manipulation">
 
                   {isSubmitting ?
                   <>
