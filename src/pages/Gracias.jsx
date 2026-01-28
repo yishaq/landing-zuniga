@@ -18,8 +18,8 @@ export default function GraciasPage() {
             <img
               src="https://corpzuniga.com/Zunig%20abogados_corto_negro.svg"
               alt="Corporativo Zúñiga"
-              className="h-12 w-auto"
-            />
+              className="h-12 w-auto" />
+
             <div className="min-w-0">
               <h1 className="text-lg font-bold text-slate-900 tracking-wide">Corporativo Zúñiga</h1>
               <p className="text-sm text-slate-600 mt-0.5">Asuntos migratorios y defensa legal en Estados Unidos</p>
@@ -27,23 +27,23 @@ export default function GraciasPage() {
           </div>
 
           <div className="flex flex-wrap gap-2.5">
-            <a 
-              href="https://wa.me/5216643540535" 
-              target="_blank" 
+            <a
+              href="https://wa.me/5216643540535"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#003E65] text-white rounded-xl text-sm font-semibold hover:bg-[#002f4d] transition-all">
               WhatsApp directo
             </a>
-            <a 
-              href="https://corpzuniga.com" 
-              target="_blank" 
+            <a
+              href="https://corpzuniga.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 text-slate-900 rounded-xl text-sm font-semibold hover:border-[#003E65] hover:text-[#003E65] transition-all">
               Sitio web
             </a>
-            <a 
-              href="https://calendly.com/citascorpzuniga/citas/" 
-              target="_blank" 
+            <a
+              href="https://calendly.com/citascorpzuniga/citas/"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 text-slate-900 rounded-xl text-sm font-semibold hover:border-[#003E65] hover:text-[#003E65] transition-all">
               Ver/gestionar cita
@@ -108,7 +108,7 @@ export default function GraciasPage() {
               <div>
                 <h4 className="font-semibold text-slate-900 text-sm mb-1">¿Dónde está mi confirmación?</h4>
                 <p className="text-slate-600 text-sm">
-                  Revisa tu correo (incluida la carpeta de spam) o accede a tu cuenta de Calendly para ver los detalles de tu cita. También puedes llamarnos al +52 664 354 0535.
+                  Revisa tu correo (incluida la carpeta de spam) o accede a tu cuenta de Calendly para ver los detalles de tu cita. También puedes llamarnos al +52 664 320 7699.
                 </p>
               </div>
 
@@ -137,7 +137,7 @@ export default function GraciasPage() {
             <div className="h-px bg-slate-200 my-5" />
 
             <p className="text-xs text-slate-500">
-              ¿Más dudas? Llámanos al <a href="tel:+526643540535" className="text-[#003E65] hover:underline">+52 664 354 0535</a> o escríbenos por <a href="https://wa.me/5216643540535" target="_blank" rel="noopener" className="text-[#003E65] hover:underline">WhatsApp</a>.
+              ¿Más dudas? Llámanos al <a href="tel:+526643207699" className="text-[#003E65] hover:underline">+52 664 320 7699</a> o escríbenos por <a href="https://wa.me/5216643540535" target="_blank" rel="noopener" className="text-[#003E65] hover:underline">WhatsApp</a>.
             </p>
           </motion.div>
 
@@ -153,9 +153,9 @@ export default function GraciasPage() {
               <h3 className="font-bold text-slate-900 mb-4">Contacto directo</h3>
               
               <div className="space-y-3">
-                <a 
-                  href="https://wa.me/5216643540535" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/5216643540535"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
                   <div className="w-10 h-10 bg-[#003E65] rounded-lg flex items-center justify-center">
@@ -167,21 +167,21 @@ export default function GraciasPage() {
                   </div>
                 </a>
 
-                <a 
-                  href="tel:+526643540535"
+                <a
+                  href="tel:+526643207699"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                  <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
+                  <div className="bg-rose-800 text-slate-50 rounded-lg w-10 h-10 flex items-center justify-center">
                     <Phone className="w-5 h-5 text-slate-700" />
                   </div>
                   <div>
                     <p className="font-semibold text-slate-900 text-sm">Teléfono</p>
-                    <p className="text-xs text-slate-600">+52 664 354 0535</p>
+                    <p className="text-xs text-slate-600">+52 664 320 7699</p>
                   </div>
                 </a>
 
-                <a 
-                  href="https://corpzuniga.com" 
-                  target="_blank" 
+                <a
+                  href="https://corpzuniga.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
                   <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
@@ -245,6 +245,6 @@ export default function GraciasPage() {
         </motion.footer>
 
       </div>
-    </div>
-  );
+    </div>);
+
 }
