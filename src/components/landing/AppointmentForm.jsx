@@ -103,15 +103,17 @@ export default function AppointmentForm({ formRef }) {
             transition={{ duration: 0.6 }}>
 
             <span className="inline-block text-amber-400 font-semibold text-sm tracking-wider uppercase mb-4">
-              Agenda Tu Cita
+              Contáctanos
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Consulta Migratoria
               <span className="block text-amber-400">Personalizada</span>
             </h2>
+            <p className="text-lg text-slate-400 mb-4 leading-relaxed">
+              Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
+            </p>
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              Da el primer paso hacia tu futuro. Agenda una consulta con el Lic. Marcelo Zúñiga 
-              y recibe asesoría profesional para tu caso migratorio.
+              Toda la información irrelevante enviada se eliminará automáticamente.
             </p>
 
             {/* Price Card */}
@@ -263,7 +265,7 @@ export default function AppointmentForm({ formRef }) {
                       Enviando...
                     </> :
 
-                  'Solicitar Cita'
+                  'Enviar Solicitud'
                   }
                 </Button>
 
