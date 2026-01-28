@@ -160,22 +160,28 @@ export default function AppointmentForm({ formRef }) {
             transition={{ duration: 0.6 }}>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">Contáctanos</h3>
+                <p className="text-slate-600 text-sm">
+                  Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
+                </p>
+              </div>
               <div className="space-y-5">
                 {/* Name */}
-                <div className="text-slate-600 text-sm">Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales. Toda la información irrelevante enviada se eliminará automáticamente.
+                <div>
+                  <Label htmlFor="name" className="text-slate-700 font-medium mb-2 block">
+                    Nombre Completo *
+                  </Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                    <Input
+                      id="name"
+                      placeholder="Tu nombre"
+                      value={formData.full_name}
+                      onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
+                      className="pl-10 h-12 border-slate-200 focus:border-amber-500 focus:ring-amber-500" />
 
-
-
-
-
-
-
-
-
-
-
-
-
+                  </div>
                 </div>
 
                 {/* Phone */}
