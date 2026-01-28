@@ -95,9 +95,10 @@ export default function ContactForm() {
   return (
     <Card className="max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl">Formulario de Contacto</CardTitle>
-        <CardDescription>
-          Completa el formulario y nos pondremos en contacto contigo
+        <CardTitle className="text-2xl">Contáctanos</CardTitle>
+        <CardDescription className="space-y-2">
+          <p>Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.</p>
+          <p>Toda la información irrelevante enviada se eliminará automáticamente.</p>
         </CardDescription>
       </CardHeader>
       <CardContent>
