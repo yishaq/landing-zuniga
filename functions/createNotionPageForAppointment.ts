@@ -21,10 +21,25 @@ Deno.serve(async (req) => {
 
     // Extract UUID from URL if a full Notion URL was provided
     if (database_id.includes('notion.site') || database_id.includes('notion.so')) {
-      const match = database_id.match(/([a-f0-9]{32}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
-      if (match) {
-        database_id = match[1].replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
+      // Extract the 32-character hex string from the URL
+      const hexMatch = database_id.match(/([a-f0-9]{32})/i);
+      if (hexMatch) {
+        const hex = hexMatch[1];
+        // Format as UUID with hyphens: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+        database_id = `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20, 32)}`;
+      } else {
+        // Try to extract already formatted UUID
+        const uuidMatch = database_id.match(/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
+        if (uuidMatch) {
+          database_id = uuidMatch[1];
+        }
       }
+    }
+    
+    // Remove any hyphens and reformat to ensure proper UUID format
+    const cleanId = database_id.replace(/-/g, '');
+    if (cleanId.length === 32 && /^[a-f0-9]{32}$/i.test(cleanId)) {
+      database_id = `${cleanId.slice(0, 8)}-${cleanId.slice(8, 12)}-${cleanId.slice(12, 16)}-${cleanId.slice(16, 20)}-${cleanId.slice(20, 32)}`;
     }
 
     const serviceMap = {
