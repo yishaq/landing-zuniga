@@ -10,9 +10,18 @@ import { Calendar, Phone, Mail, User, CheckCircle, DollarSign, Loader2 } from 'l
 import { toast } from 'sonner';
 
 const services = [
-{ value: 'green_card', label: 'Residencia Permanente (Green Card)' },
-{ value: 'ajuste_estatus', label: 'Ajuste de Estatus por Petición Familiar' },
-{ value: 'defensa_criminal', label: 'Defensa Criminal y Deportaciones' }];
+{ value: 'peticion_familiar', label: 'Petición familiar (I-130)' },
+{ value: 'visas_no_inmigrante', label: 'Visas de no inmigrante (turista, trabajo, estudiante, etc.)' },
+{ value: 'perdones', label: 'Perdones (601 / 601A / 212)' },
+{ value: 'cambio_estatus', label: 'Cambio de Estatus Migratorio' },
+{ value: 'renovacion_visa', label: 'Renovación o reemplazo de visa' },
+{ value: 'naturalizacion', label: 'Naturalización y Ciudadanía' },
+{ value: 'green_card', label: 'Residencia Permanente: "Green Card"' },
+{ value: 'asilo', label: 'Obtener Asilo en los Estados Unidos' },
+{ value: 'records', label: 'Récords Migratorios y Federales' },
+{ value: 'defensa_criminal', label: 'Defensa Legal de Casos Criminales' },
+{ value: 'cancelacion_deportacion', label: 'Cancelación de Deportación' },
+{ value: 'otros', label: 'Otros servicios' }];
 
 
 export default function AppointmentForm({ formRef }) {
