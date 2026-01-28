@@ -290,7 +290,6 @@ export default function ServicesSection() {
 
                     {/* Arrow */}
                     <div className="flex items-center gap-2 text-slate-900 font-medium group-hover:gap-3 transition-all text-sm">
-                      <span>Saber más</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </motion.div>
