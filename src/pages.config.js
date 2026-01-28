@@ -1,10 +1,12 @@
-import Home from './pages/Home';
 import Gracias from './pages/Gracias';
+import Home from './pages/Home';
+import AdminExport from './pages/AdminExport';
 
 
 export const PAGES = {
-    "Home": Home,
     "Gracias": Gracias,
+    "Home": Home,
+    "AdminExport": AdminExport,
 }
 
 export const pagesConfig = {
