@@ -10,18 +10,9 @@ import { Calendar, Phone, Mail, User, CheckCircle, DollarSign, Loader2 } from 'l
 import { toast } from 'sonner';
 
 const services = [
-{ value: 'peticion_familiar', label: 'Petición Familiar (I-130)' },
-{ value: 'visas_no_inmigrante', label: 'Visas de No Inmigrante (turista, trabajo, estudiante, etc.)' },
-{ value: 'perdones', label: 'Perdones (601 / 601A / 212)' },
-{ value: 'cambio_estatus', label: 'Cambio de Estatus Migratorio' },
-{ value: 'renovacion_visa', label: 'Renovación o Reemplazo de Visa' },
-{ value: 'naturalizacion', label: 'Naturalización y Ciudadanía' },
-{ value: 'green_card', label: 'Residencia Permanente: "Green Card"' },
-{ value: 'asilo', label: 'Obtener Asilo en los Estados Unidos' },
-{ value: 'records', label: 'Récords Migratorios y Federales' },
-{ value: 'defensa_criminal', label: 'Defensa Legal de Casos Criminales' },
-{ value: 'cancelacion_deportacion', label: 'Cancelación de Deportación' },
-{ value: 'otros', label: 'Otros Servicios' }];
+{ value: 'green_card', label: 'Residencia Permanente (Green Card)' },
+{ value: 'ajuste_estatus', label: 'Ajuste de Estatus por Petición Familiar' },
+{ value: 'defensa_criminal', label: 'Defensa Criminal y Deportaciones' }];
 
 
 export default function AppointmentForm({ formRef }) {
@@ -169,12 +160,6 @@ export default function AppointmentForm({ formRef }) {
             transition={{ duration: 0.6 }}>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">Contáctanos</h3>
-                <p className="text-slate-600 text-sm">
-                  Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
-                </p>
-              </div>
               <div className="space-y-5">
                 {/* Name */}
                 <div>
@@ -257,7 +242,7 @@ export default function AppointmentForm({ formRef }) {
                 {/* Message */}
                 <div>
                   <Label htmlFor="message" className="text-slate-700 font-medium mb-2 block">
-                    Descripción del Asunto
+                    Cuéntanos sobre tu caso
                   </Label>
                   <Textarea
                     id="message"
