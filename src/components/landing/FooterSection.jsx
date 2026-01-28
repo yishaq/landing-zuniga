@@ -95,7 +95,7 @@ export default function FooterSection() {
             <p>© {new Date().getFullYear()} Corporativo Zúñiga. Todos los derechos reservados.</p>
             <div className="flex items-center gap-6">
               <a href="https://corpzuniga.com/" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                Sitio Web Principal
+                Made with ❤ by Mashaka.
               </a>
             </div>
           </div>
