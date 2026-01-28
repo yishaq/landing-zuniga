@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
-import { Loader2, CheckCircle, Circle, Clock, ExternalLink, RefreshCw } from 'lucide-react';
+import { Loader2, CheckCircle, Circle, Clock, ExternalLink, RefreshCw, Send } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from 'sonner';
 
 export default function DashboardPage() {
+  const [updateTitle, setUpdateTitle] = useState('');
+  const [updateContent, setUpdateContent] = useState('');
+
   const { data: onboardingData, isLoading, refetch, isRefetching } = useQuery({
     queryKey: ['notion-onboarding'],
     queryFn: async () => {
@@ -16,6 +22,30 @@ export default function DashboardPage() {
     },
     refetchInterval: 60000 // Refresh every minute
   });
+
+  const postUpdateMutation = useMutation({
+    mutationFn: async ({ title, content }) => {
+      const { data } = await base44.functions.invoke('postNotionUpdate', { title, content });
+      return data;
+    },
+    onSuccess: () => {
+      toast.success('Actualización publicada en Notion');
+      setUpdateTitle('');
+      setUpdateContent('');
+    },
+    onError: (error) => {
+      toast.error(error.message || 'Error al publicar actualización');
+    }
+  });
+
+  const handlePostUpdate = (e) => {
+    e.preventDefault();
+    if (!updateTitle.trim() || !updateContent.trim()) {
+      toast.error('Por favor completa todos los campos');
+      return;
+    }
+    postUpdateMutation.mutate({ title: updateTitle, content: updateContent });
+  };
 
   const getStatusColor = (status) => {
     if (status === 'Done' || status === 'Completado') return 'bg-green-100 text-green-700';
@@ -102,6 +132,54 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <Progress value={stats.progress_percent || 0} className="h-3" />
+          </CardContent>
+        </Card>
+
+        {/* Post Update to Notion */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Publicar Actualización</CardTitle>
+            <CardDescription>Escribe una actualización del proyecto para Notion</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handlePostUpdate} className="space-y-4">
+              <div>
+                <Input
+                  placeholder="Título de la actualización..."
+                  value={updateTitle}
+                  onChange={(e) => setUpdateTitle(e.target.value)}
+                  disabled={postUpdateMutation.isPending}
+                />
+              </div>
+              <div>
+                <Textarea
+                  placeholder="Describe los avances, cambios o novedades del proyecto..."
+                  value={updateContent}
+                  onChange={(e) => setUpdateContent(e.target.value)}
+                  className="min-h-[120px]"
+                  disabled={postUpdateMutation.isPending}
+                />
+              </div>
+              <div className="flex justify-end">
+                <Button 
+                  type="submit" 
+                  disabled={postUpdateMutation.isPending}
+                  className="bg-indigo-600 hover:bg-indigo-700"
+                >
+                  {postUpdateMutation.isPending ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Publicando...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Publicar en Notion
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
           </CardContent>
         </Card>
 
