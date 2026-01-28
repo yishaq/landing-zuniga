@@ -13,10 +13,18 @@ Deno.serve(async (req) => {
     }
 
     // Get database ID from secrets
-    const database_id = Deno.env.get('NOTION_DATABASE_ID');
+    let database_id = Deno.env.get('NOTION_DATABASE_ID');
 
     if (!database_id) {
       return Response.json({ error: 'NOTION_DATABASE_ID not configured' }, { status: 400 });
+    }
+
+    // Extract UUID from URL if a full Notion URL was provided
+    if (database_id.includes('notion.site') || database_id.includes('notion.so')) {
+      const match = database_id.match(/([a-f0-9]{32}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
+      if (match) {
+        database_id = match[1].replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
+      }
     }
 
     const serviceMap = {
