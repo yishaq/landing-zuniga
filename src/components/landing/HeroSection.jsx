@@ -108,9 +108,8 @@ export default function HeroSection({ onScrollToForm }) {
               <span className="text-amber-400 text-sm font-medium">Más de 1,000 casos de éxito</span>
             </div>
 
-            <h1 className="text-[#ffffff] mb-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Abogados
-de Inmigración
-en Tijuana
+            <h1 className="text-[#ffffff] mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Abogados de Inmigración en Tijuana
 
 
 
@@ -118,7 +117,7 @@ en Tijuana
 
             </h1>
 
-            <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
               Expertos en Green Card, Ajuste de Estatus y Defensa Criminal. 
               Agenda tu consulta con el <strong className="text-white">Lic. Marcelo Zúñiga</strong> y 
               da el primer paso hacia tu futuro en Estados Unidos.
@@ -127,8 +126,7 @@ en Tijuana
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button
                 onClick={onScrollToForm}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40">
-
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-xl shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40 active:scale-95 min-h-[56px] touch-manipulation">
                 Agendar Consulta
               </Button>
               <a
@@ -137,9 +135,8 @@ en Tijuana
                 rel="noopener noreferrer">
 
                 <Button
-                  variant="outline" className="bg-teal-800 text-white px-8 py-6 text-lg font-medium rounded-xl inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow-sm hover:text-accent-foreground h-9 border-2 border-slate-600 hover:bg-slate-800 w-full">
-
-
+                  variant="outline"
+                  className="bg-teal-800 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-medium rounded-xl inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors border-2 border-slate-600 hover:bg-slate-800 w-full active:scale-95 min-h-[56px] touch-manipulation">
                   WhatsApp
                 </Button>
               </a>

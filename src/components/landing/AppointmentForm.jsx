@@ -115,9 +115,9 @@ export default function AppointmentForm({ formRef }) {
             <span className="inline-block text-amber-400 font-semibold text-sm tracking-wider uppercase mb-4">
               Contáctanos
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Expertos en Migracion
-              <span className="block text-amber-400">y Asuntos criminales</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Expertos en Migración
+              <span className="block text-amber-400">y Asuntos Criminales</span>
             </h2>
             <p className="text-lg text-slate-400 mb-4 leading-relaxed">
               Expertos en Asuntos criminales
@@ -172,8 +172,8 @@ También atendemos asuntos del ámbito Criminal, como transporte o posesión de 
 
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
               <div className="mb-6">
-                <h3 className="text-3xl font-bold text-slate-900 mb-3">Contáctanos para recibir asesoría y apoyo legal.</h3>
-                <p className="text-slate-600 text-sm">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-3">Contáctanos para recibir asesoría y apoyo legal.</h3>
+                <p className="text-slate-600 text-xs sm:text-sm">
                   Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales. Toda la información irrelevante enviada se eliminará automáticamente.
                 </p>
               </div>

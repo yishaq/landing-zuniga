@@ -6,16 +6,18 @@ export default function FooterSection() {
     <footer className="bg-slate-900 text-white">
       {/* CTA Bar */}
       <div className="bg-cyan-100 from-amber-500 to-amber-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900">¿Tienes dudas? Escríbenos ahora</h3>
-              <p className="text-slate-800">Atención inmediata en horario hábil</p>
+            <div className="text-center md:text-left">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900">¿Tienes dudas? Escríbenos ahora</h3>
+              <p className="text-sm sm:text-base text-slate-800">Atención inmediata en horario hábil</p>
             </div>
             <a
               href="https://wa.me/526643540535?text=Hola,%20me%20gustaría%20información%20sobre%20servicios%20migratorios"
               target="_blank"
-              rel="noopener noreferrer" className="bg-teal-800 text-white px-6 py-3 font-semibold rounded-xl inline-flex items-center gap-2 hover:bg-slate-800 transition-colors">WhatsApp
+              rel="noopener noreferrer"
+              className="bg-teal-800 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl inline-flex items-center gap-2 hover:bg-slate-800 transition-colors active:scale-95 min-h-[52px] touch-manipulation w-full md:w-auto justify-center">
+              WhatsApp
 
 
 
@@ -26,12 +28,12 @@ export default function FooterSection() {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {/* Brand */}
           <div>
-            <h4 className="text-2xl font-bold mb-4">Corporativo Zúñiga</h4>
-            <p className="text-slate-400 mb-6 leading-relaxed">
+            <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Corporativo Zúñiga</h4>
+            <p className="text-sm sm:text-base text-slate-400 mb-4 sm:mb-6 leading-relaxed">
               Abogados especializados en asuntos migratorios y criminales en Estados Unidos. 
               Más de 20 años de experiencia resolviendo casos complejos.
             </p>
@@ -46,42 +48,42 @@ export default function FooterSection() {
 
           {/* Contact */}
           <div>
-            <h5 className="font-semibold text-lg mb-4">Contacto</h5>
-            <ul className="space-y-4">
+            <h5 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Contacto</h5>
+            <ul className="space-y-3 sm:space-y-4">
               <li>
-                <a href="tel:+526643540535" className="flex items-center gap-3 text-slate-400 hover:text-amber-400 transition-colors">
-                  <Phone className="w-5 h-5 text-amber-500" />
-                  +52 664 354 0535
+                <a href="tel:+526643540535" className="flex items-center gap-3 text-slate-400 hover:text-amber-400 transition-colors active:scale-95 touch-manipulation py-1">
+                  <Phone className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">+52 664 354 0535</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:contacto@corpzuniga.com" className="flex items-center gap-3 text-slate-400 hover:text-amber-400 transition-colors">
-                  <Mail className="w-5 h-5 text-amber-500" />
-                  info@corpzuniga.com
+                <a href="mailto:contacto@corpzuniga.com" className="flex items-center gap-3 text-slate-400 hover:text-amber-400 transition-colors active:scale-95 touch-manipulation py-1">
+                  <Mail className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">info@corpzuniga.com</span>
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-slate-400">
+              <li className="flex items-start gap-3 text-slate-400 py-1">
                 <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                <span>Edificio Centura, Blvd. Agua Caliente 10611 int. 301, Tijuana B.C.</span>
+                <span className="text-sm sm:text-base">Edificio Centura, Blvd. Agua Caliente 10611 int. 301, Tijuana B.C.</span>
               </li>
             </ul>
           </div>
 
           {/* Hours */}
           <div>
-            <h5 className="font-semibold text-lg mb-4">Horario de Atención</h5>
-            <div className="flex items-start gap-3 text-slate-400 mb-4">
+            <h5 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Horario de Atención</h5>
+            <div className="flex items-start gap-3 text-slate-400 mb-3 sm:mb-4">
               <Clock className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <div>
-                <p>Lunes a Viernes</p>
-                <p className="text-white font-medium">9:00 AM - 5:00 PM</p>
+                <p className="text-sm sm:text-base">Lunes a Viernes</p>
+                <p className="text-white font-medium text-sm sm:text-base">9:00 AM - 5:00 PM</p>
               </div>
             </div>
             <div className="flex items-start gap-3 text-slate-400">
               <Clock className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <div>
-                <p>Sábados previa cita</p>
-                <p className="text-white font-medium">10:00 AM - 2:00 PM</p>
+                <p className="text-sm sm:text-base">Sábados previa cita</p>
+                <p className="text-white font-medium text-sm sm:text-base">10:00 AM - 2:00 PM</p>
               </div>
             </div>
           </div>

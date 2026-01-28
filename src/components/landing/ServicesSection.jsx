@@ -226,14 +226,14 @@ export default function ServicesSection() {
           <span className="inline-block text-amber-600 font-semibold text-sm tracking-wider uppercase mb-4">
             Nuestros Servicios
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             Servicios Especializados
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
             Ofrecemos soluciones legales integrales para resolver tu situación migratoria
           </p>
-          <p className="text-2xl font-bold mb-4 text-slate-600 max-w-3xl mx-auto">
-            Hemos trabajado en mas de 1,000 casos con éxito.
+          <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-slate-600 max-w-3xl mx-auto">
+            Hemos trabajado en más de 1,000 casos con éxito.
           </p>
         </motion.div>
 
@@ -248,14 +248,14 @@ export default function ServicesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
                 className="mb-8">
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-2">
                   {category.name}
                 </h3>
                 <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full" />
               </motion.div>
 
               {/* Services Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {category.services.map((service, index) => (
                   <motion.div
                     key={service.id}
@@ -263,15 +263,15 @@ export default function ServicesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white border border-slate-200 p-8 rounded-3xl group relative hover:shadow-xl transition-all duration-500">
+                    className="bg-white border border-slate-200 p-6 sm:p-8 rounded-2xl sm:rounded-3xl group relative hover:shadow-xl transition-all duration-500 active:scale-[0.98]">
 
                     {/* Icon */}
-                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg mb-6`}>
-                      <service.icon className="w-7 h-7 text-white" />
+                    <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${service.color} shadow-lg mb-4 sm:mb-6`}>
+                      <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
 
                     {/* Content */}
-                    <h4 className="text-xl font-bold text-slate-900 mb-1">
+                    <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">
                       {service.title}
                     </h4>
                     <p className={`text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-4`}>
