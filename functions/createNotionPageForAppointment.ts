@@ -19,16 +19,19 @@ Deno.serve(async (req) => {
       return Response.json({ error: 'NOTION_DATABASE_ID not configured' }, { status: 400 });
     }
 
-    // Extract UUID from URL if a full Notion URL was provided
-    if (database_id.includes('notion.site') || database_id.includes('notion.so')) {
-      // Extract the 32-character hex string from the URL
+    // Extract UUID from Notion URL or format properly
+    // Notion database URLs look like: https://notion.site/2f608c918b388013ac0... (32 hex chars)
+    // or https://notion.so/database-id?v=view-id
+    const originalId = database_id;
+    
+    // If it's a URL, extract the ID from it
+    if (database_id.includes('http')) {
+      // Try to find 32 consecutive hex characters (Notion's compact format)
       const hexMatch = database_id.match(/([a-f0-9]{32})/i);
       if (hexMatch) {
-        const hex = hexMatch[1];
-        // Format as UUID with hyphens: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-        database_id = `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20, 32)}`;
+        database_id = hexMatch[1];
       } else {
-        // Try to extract already formatted UUID
+        // Try to find UUID format with dashes
         const uuidMatch = database_id.match(/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
         if (uuidMatch) {
           database_id = uuidMatch[1];
@@ -36,10 +39,18 @@ Deno.serve(async (req) => {
       }
     }
     
-    // Remove any hyphens and reformat to ensure proper UUID format
-    const cleanId = database_id.replace(/-/g, '');
-    if (cleanId.length === 32 && /^[a-f0-9]{32}$/i.test(cleanId)) {
-      database_id = `${cleanId.slice(0, 8)}-${cleanId.slice(8, 12)}-${cleanId.slice(12, 16)}-${cleanId.slice(16, 20)}-${cleanId.slice(20, 32)}`;
+    // Normalize to UUID format with dashes
+    database_id = database_id.replace(/-/g, ''); // Remove existing dashes
+    
+    if (database_id.length === 32 && /^[a-f0-9]{32}$/i.test(database_id)) {
+      // Format as proper UUID: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+      database_id = `${database_id.slice(0, 8)}-${database_id.slice(8, 12)}-${database_id.slice(12, 16)}-${database_id.slice(16, 20)}-${database_id.slice(20, 32)}`;
+    } else {
+      return Response.json({ 
+        error: 'Invalid NOTION_DATABASE_ID format. Must be a 32-character hex string or valid UUID.',
+        received: originalId,
+        processed: database_id
+      }, { status: 400 });
     }
 
     const serviceMap = {
