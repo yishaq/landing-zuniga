@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, CheckCircle, XCircle, ExternalLink } from 'lucide-react';
+import { Loader2, CheckCircle, XCircle, ExternalLink, ArrowRight, ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function AdminExportPage() {
@@ -13,6 +13,7 @@ export default function AdminExportPage() {
   const [selectedAppointments, setSelectedAppointments] = useState([]);
   const [isExporting, setIsExporting] = useState(false);
   const [exportResults, setExportResults] = useState(null);
+  const [syncDirection, setSyncDirection] = useState('to_notion');
 
   const { data: appointments, isLoading } = useQuery({
     queryKey: ['appointments'],
@@ -20,7 +21,7 @@ export default function AdminExportPage() {
     initialData: []
   });
 
-  const handleExport = async () => {
+  const handleSync = async () => {
     if (!databaseId.trim()) {
       toast.error('Por favor ingresa el ID de la base de datos de Notion');
       return;
@@ -30,15 +31,20 @@ export default function AdminExportPage() {
     setExportResults(null);
 
     try {
-      const { data } = await base44.functions.invoke('exportToNotion', {
+      const { data } = await base44.functions.invoke('syncWithNotion', {
         database_id: databaseId,
-        appointment_id: selectedAppointments.length === 1 ? selectedAppointments[0] : null
+        direction: syncDirection
       });
 
       setExportResults(data);
-      toast.success(`Exportadas ${data.exported} citas correctamente`);
+      
+      if (syncDirection === 'to_notion') {
+        toast.success(`Sincronizadas a Notion: ${data.created} creadas, ${data.updated} actualizadas`);
+      } else {
+        toast.success(`Sincronizadas desde Notion: ${data.created} creadas, ${data.updated} actualizadas`);
+      }
     } catch (error) {
-      toast.error(error.message || 'Error al exportar');
+      toast.error(error.message || 'Error al sincronizar');
     } finally {
       setIsExporting(false);
     }
@@ -67,8 +73,8 @@ export default function AdminExportPage() {
     <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">Exportar a Notion</h1>
-          <p className="text-slate-600">Exporta las notas de consulta a tu base de datos de Notion</p>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">Sincronizar con Notion</h1>
+          <p className="text-slate-600">Sincroniza tus citas con tu base de datos de Notion en ambas direcciones</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
@@ -95,26 +101,44 @@ export default function AdminExportPage() {
                 </div>
 
                 <div>
-                  <Label>Citas seleccionadas</Label>
-                  <p className="text-sm text-slate-600 mt-1">
-                    {selectedAppointments.length === 0
-                      ? 'Todas las citas'
-                      : `${selectedAppointments.length} cita(s) seleccionada(s)`}
-                  </p>
+                  <Label>Dirección de sincronización</Label>
+                  <div className="flex gap-2 mt-2">
+                    <Button
+                      variant={syncDirection === 'to_notion' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSyncDirection('to_notion')}
+                      className="flex-1"
+                    >
+                      <ArrowRight className="w-4 h-4 mr-1" />
+                      A Notion
+                    </Button>
+                    <Button
+                      variant={syncDirection === 'from_notion' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSyncDirection('from_notion')}
+                      className="flex-1"
+                    >
+                      <ArrowLeft className="w-4 h-4 mr-1" />
+                      Desde Notion
+                    </Button>
+                  </div>
                 </div>
 
                 <Button
-                  onClick={handleExport}
+                  onClick={handleSync}
                   disabled={isExporting || !databaseId.trim()}
                   className="w-full"
                 >
                   {isExporting ? (
                     <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Exportando...
+                      Sincronizando...
                     </>
                   ) : (
-                    'Exportar a Notion'
+                    <>
+                      {syncDirection === 'to_notion' ? <ArrowRight className="w-4 h-4 mr-2" /> : <ArrowLeft className="w-4 h-4 mr-2" />}
+                      Sincronizar
+                    </>
                   )}
                 </Button>
 
@@ -122,10 +146,18 @@ export default function AdminExportPage() {
                   <div className="mt-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <h4 className="font-semibold text-sm mb-2">Resultados</h4>
                     <div className="space-y-1 text-xs">
-                      <p className="flex items-center gap-2 text-green-600">
-                        <CheckCircle className="w-3 h-3" />
-                        Exitosas: {exportResults.exported}
-                      </p>
+                      {exportResults.created > 0 && (
+                        <p className="flex items-center gap-2 text-green-600">
+                          <CheckCircle className="w-3 h-3" />
+                          Creadas: {exportResults.created}
+                        </p>
+                      )}
+                      {exportResults.updated > 0 && (
+                        <p className="flex items-center gap-2 text-blue-600">
+                          <CheckCircle className="w-3 h-3" />
+                          Actualizadas: {exportResults.updated}
+                        </p>
+                      )}
                       {exportResults.failed > 0 && (
                         <p className="flex items-center gap-2 text-red-600">
                           <XCircle className="w-3 h-3" />
@@ -143,8 +175,12 @@ export default function AdminExportPage() {
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle>Citas</CardTitle>
-                <CardDescription>Selecciona las citas que deseas exportar (opcional)</CardDescription>
+                <CardTitle>Vista de Citas</CardTitle>
+                <CardDescription>
+                  {syncDirection === 'to_notion' 
+                    ? 'Estas citas se sincronizarán a Notion' 
+                    : 'Los datos de Notion se sincronizarán aquí'}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 {isLoading ? (
@@ -160,12 +196,7 @@ export default function AdminExportPage() {
                     {appointments.map((appointment) => (
                       <div
                         key={appointment.id}
-                        onClick={() => toggleAppointment(appointment.id)}
-                        className={`p-4 border rounded-lg cursor-pointer transition-all ${
-                          selectedAppointments.includes(appointment.id)
-                            ? 'border-blue-500 bg-blue-50'
-                            : 'border-slate-200 hover:border-slate-300'
-                        }`}
+                        className="p-4 border rounded-lg border-slate-200"
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1 min-w-0">
