@@ -116,8 +116,8 @@ export default function AppointmentForm({ formRef }) {
               Contáctanos
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Consulta Migratoria
-              <span className="block text-amber-400">Personalizada</span>
+              Expertos en Migracion
+              <span className="block text-amber-400">y Asuntos criminales</span>
             </h2>
             <p className="text-lg text-slate-400 mb-4 leading-relaxed">
               Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
