@@ -49,7 +49,7 @@ const TestimonialCard = ({ testimonial, index }) => {
       <div className="relative">
         <StarRating rating={testimonial.rating} />
         
-        <p className="text-slate-700 mt-4 mb-6 text-base leading-relaxed">
+        <p className="text-slate-700 leading-relaxed mt-4 mb-6 text-lg">
           "{testimonial.testimonial_text}"
         </p>
 

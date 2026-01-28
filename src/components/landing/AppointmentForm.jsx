@@ -160,6 +160,12 @@ export default function AppointmentForm({ formRef }) {
             transition={{ duration: 0.6 }}>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">Contáctanos</h3>
+                <p className="text-slate-600 text-sm">
+                  Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
+                </p>
+              </div>
               <div className="space-y-5">
                 {/* Name */}
                 <div>
@@ -242,7 +248,7 @@ export default function AppointmentForm({ formRef }) {
                 {/* Message */}
                 <div>
                   <Label htmlFor="message" className="text-slate-700 font-medium mb-2 block">
-                    Cuéntanos sobre tu caso
+                    Descripción del Asunto
                   </Label>
                   <Textarea
                     id="message"

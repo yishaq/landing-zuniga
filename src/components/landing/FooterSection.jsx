@@ -94,8 +94,8 @@ export default function FooterSection() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Corporativo Zúñiga. Todos los derechos reservados.</p>
             <div className="flex items-center gap-6">
-              <a href="https://corpzuniga.com/" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">Made with ❤ by Mashaka.
-
+              <a href="https://corpzuniga.com/" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
+                Sitio Web Principal
               </a>
             </div>
           </div>
