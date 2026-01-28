@@ -122,6 +122,9 @@ export default function AppointmentForm({ formRef }) {
             <p className="text-lg text-slate-400 mb-4 leading-relaxed">
               Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
             </p>
+            <p className="text-lg text-slate-400 mb-4 leading-relaxed">
+              También atendemos asuntos del ámbito Criminal, como transporte o posesión de drogas, conspiración, cruce de Drogas a Estados Unidos, casos de "Mula Ciega", Investigaciones de la DEA y FBI, recabamos su estatus legal, sus récords federales y estatales.
+            </p>
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
               Toda la información irrelevante enviada se eliminará automáticamente.
             </p>
