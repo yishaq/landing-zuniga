@@ -174,7 +174,7 @@ También atendemos asuntos del ámbito Criminal, como transporte o posesión de 
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Contáctanos para recibir asesoría y apoyo legal.</h3>
                 <p className="text-slate-600 text-sm">
-                  Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales.
+                  Utilice este formulario solo para enviar solicitudes de servicios legales o consultas legales. Toda la información irrelevante enviada se eliminará automáticamente.
                 </p>
               </div>
               <div className="space-y-5">
