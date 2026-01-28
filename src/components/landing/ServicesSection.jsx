@@ -232,7 +232,7 @@ export default function ServicesSection() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Ofrecemos soluciones legales integrales para resolver tu situación migratoria
           </p>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-2xl font-bold mb-4 text-slate-600 max-w-3xl mx-auto">
             Hemos trabajado en mas de 1,000 casos con éxito.
           </p>
         </motion.div>
