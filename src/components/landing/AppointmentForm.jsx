@@ -242,7 +242,7 @@ export default function AppointmentForm({ formRef }) {
                 {/* Message */}
                 <div>
                   <Label htmlFor="message" className="text-slate-700 font-medium mb-2 block">
-                    Cuéntanos sobre tu caso
+                    Descripción del Asunto
                   </Label>
                   <Textarea
                     id="message"
