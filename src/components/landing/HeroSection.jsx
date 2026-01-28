@@ -40,7 +40,8 @@ export default function HeroSection({ onScrollToForm }) {
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-300">
               <a href="tel:+526643207699" className="flex items-center gap-2 hover:text-amber-400 transition-colors">
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">+52 664 320 7699</span>
+                <span className="font-medium">+52 664 354 0535
+                </span>
               </a>
               <div className="hidden md:flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
@@ -55,10 +56,9 @@ export default function HeroSection({ onScrollToForm }) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}>
+          <motion.div initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}>
 
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
