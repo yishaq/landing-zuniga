@@ -30,23 +30,23 @@ export default function GraciasPage() {
             <a
               href="https://wa.me/5216643540535"
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#003E65] text-white rounded-xl text-sm font-semibold hover:bg-[#002f4d] transition-all">
-              WhatsApp directo
+              rel="noopener noreferrer" className="bg-emerald-700 text-white px-4 py-2.5 text-sm font-semibold rounded-xl inline-flex items-center gap-2 hover:bg-[#002f4d] transition-all">WhatsApp directo
+
+
             </a>
             <a
               href="https://corpzuniga.com"
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 text-slate-900 rounded-xl text-sm font-semibold hover:border-[#003E65] hover:text-[#003E65] transition-all">
-              Sitio web
+              rel="noopener noreferrer" className="bg-slate-950 text-slate-50 px-4 py-2.5 text-sm font-semibold rounded-xl inline-flex items-center gap-2 border border-slate-200 hover:border-[#003E65] hover:text-[#003E65] transition-all">Sitio web
+
+
             </a>
             <a
               href="https://calendly.com/citascorpzuniga/citas/"
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 text-slate-900 rounded-xl text-sm font-semibold hover:border-[#003E65] hover:text-[#003E65] transition-all">
-              Ver/gestionar cita
+              rel="noopener noreferrer" className="bg-slate-950 text-slate-50 px-4 py-2.5 text-sm font-semibold rounded-xl inline-flex items-center gap-2 border border-slate-200 hover:border-[#003E65] hover:text-[#003E65] transition-all">Ver/gestionar cita
+
+
             </a>
           </div>
         </motion.header>
@@ -59,7 +59,7 @@ export default function GraciasPage() {
             transition={{ delay: 0.1 }}
             className="lg:col-span-3 border border-slate-200 bg-white rounded-2xl shadow-lg p-6">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#003E65] bg-white text-[#003E65] text-xs font-bold tracking-wide mb-3">
+            <div className="bg-emerald-700 text-slate-50 mb-3 px-3 py-1.5 text-xs font-bold tracking-wide rounded-full inline-flex items-center gap-2 border border-[#003E65]">
               <CheckCircle className="w-4 h-4" />
               Pago confirmado
             </div>
@@ -73,31 +73,31 @@ export default function GraciasPage() {
 
             {/* Info Grid */}
             <div className="grid sm:grid-cols-2 gap-3.5 mb-5">
-              <div className="border border-slate-200 rounded-2xl p-4 bg-white">
+              <div className="bg-zinc-100 p-4 rounded-2xl border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-1.5 text-sm">¿Qué sigue?</h3>
                 <p className="text-slate-600 text-sm">Si necesitas confirmar datos o enviar documentos, escríbenos por WhatsApp. Te respondemos en horario laboral.</p>
               </div>
 
-              <div className="border border-slate-200 rounded-2xl p-4 bg-white">
+              <div className="bg-gray-100 p-4 rounded-2xl border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-1.5 text-sm">Recomendación</h3>
                 <p className="text-slate-600 text-sm">Ten a la mano tu identificación y cualquier documento migratorio o legal relevante para tu caso.</p>
               </div>
 
-              <div className="border border-slate-200 rounded-2xl p-4 bg-white">
+              <div className="bg-gray-100 p-4 rounded-2xl border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-1.5 text-sm">Ubicación</h3>
                 <p className="text-slate-600 text-sm">Blvd. Agua Caliente 10611, Piso 3, Oficina 301, Aviación, 22020 Tijuana, B.C.</p>
               </div>
 
-              <div className="border border-slate-200 rounded-2xl p-4 bg-white">
+              <div className="bg-gray-100 p-4 rounded-2xl border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-1.5 text-sm">Horario</h3>
                 <p className="text-slate-600 text-sm">Lunes a viernes, 9:00 AM a 5:00 PM</p>
               </div>
             </div>
 
             {/* Important Note */}
-            <div className="border-l-3 border-l-4 border-[#003E65] bg-slate-50 rounded-xl p-4 mb-5">
-              <p className="text-sm text-slate-900">
-                <strong>Importante:</strong> Esta página es informativa. La asesoría no garantiza resultados específicos; cada caso se evalúa de forma individual según tus circunstancias y la legislación vigente.
+            <div className="bg-red-500 text-[#ffffff] mb-5 p-4 rounded-xl border-l-3 border-l-4 border-[#003E65]">
+              <p className="text-slate-50 text-sm">Importante: Esta página es informativa. La asesoría no garantiza resultados específicos; cada caso se evalúa de forma individual según tus circunstancias y la legislación vigente.
+
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export default function GraciasPage() {
                 <a
                   href="tel:+526643207699"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                  <div className="bg-rose-800 text-slate-50 rounded-lg w-10 h-10 flex items-center justify-center">
+                  <div className="bg-stone-100 text-slate-50 rounded-lg w-10 h-10 flex items-center justify-center">
                     <Phone className="w-5 h-5 text-slate-700" />
                   </div>
                   <div>
@@ -184,7 +184,7 @@ export default function GraciasPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
-                  <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
+                  <div className="bg-stone-100 text-gray-100 rounded-lg w-10 h-10 flex items-center justify-center">
                     <Globe className="w-5 h-5 text-slate-700" />
                   </div>
                   <div>
