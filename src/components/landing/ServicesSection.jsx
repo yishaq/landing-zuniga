@@ -143,15 +143,7 @@ const serviceCategories = [
         features: ['Extensión de visa', 'Cambio de estatus', 'Evita penalidades'],
         color: 'from-purple-500 to-purple-700',
       },
-      {
-        id: 'proceso_adopcion_internacional',
-        icon: Heart,
-        title: 'Proceso de Adopción Internacional',
-        subtitle: 'Uniendo Familias',
-        description: 'Facilitamos el Proceso de Adopción Internacional para familias que buscan consolidar sus familias a nivel global. Trabajamos para hacer realidad tu sueño de paternidad.',
-        features: ['Adopción de menores', 'Asesoría legal', 'Cumplimiento de leyes'],
-        color: 'from-pink-500 to-pink-700',
-      },
+
       {
         id: 'reunificacion_familiar',
         icon: UserPlus,
