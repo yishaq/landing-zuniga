@@ -24,6 +24,15 @@ const serviceCategories = [
         features: ['Estrategias legales', 'Representación en corte', 'Defensa sólida'],
         color: 'from-yellow-500 to-yellow-700',
       },
+      {
+        id: 'perdon_migratorio_waiver',
+        icon: FileText,
+        title: 'Perdón Migratorio o Waiver of Inadmissibility',
+        subtitle: 'Segunda Oportunidad',
+        description: 'Si enfrentas inadmisibilidad para ingresar a Estados Unidos, nuestro servicio de Perdón Migratorio te ofrece una segunda oportunidad. Navegamos contigo por el complejo proceso de waivers para superar obstáculos legales.',
+        features: ['Waivers I-601', 'Waivers I-601A', 'Casos de inadmisibilidad'],
+        color: 'from-orange-500 to-orange-700',
+      },
     ]
   },
   {
