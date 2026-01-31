@@ -47,6 +47,7 @@ export default function AppointmentForm({ formRef }) {
     setIsSubmitting(true);
 
     await base44.entities.Appointment.create(formData);
+    await base44.functions.invoke('sendAppointmentEmail', { appointmentData: formData });
 
     setIsSuccess(true);
     toast.success('¡Solicitud enviada! Te contactaremos pronto.');
